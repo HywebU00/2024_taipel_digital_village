@@ -1,4 +1,8 @@
 table {
+  td,
+  th {
+    font-size: 16px !important;
+  }
   thead {
     white-space: nowrap;
     .v-data-table__td {

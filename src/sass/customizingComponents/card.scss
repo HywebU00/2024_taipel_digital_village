@@ -171,3 +171,38 @@
     }
   }
 }
+.dialogCard {
+  .v-card-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: $primary;
+  }
+  .v-radio-group {
+    .v-input {
+      width: 160px;
+      flex: none;
+    }
+  }
+  .editBtn {
+    top: rem(24);
+    position: absolute;
+    right: rem(24);
+    .v-btn__content {
+      font-size: 1rem;
+    }
+  }
+  .btn {
+    min-width: 120px !important;
+  }
+  .info,
+  .infoList {
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+  }
+  .paymentList {
+    .v-list-item {
+      min-height: 4rem;
+      border-bottom: 1px solid lighten($gray3, 35%);
+    }
+  }
+}

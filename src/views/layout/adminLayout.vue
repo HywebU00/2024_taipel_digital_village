@@ -72,80 +72,8 @@
             </v-list-item>
           </template>
         </v-list-group>
-        <!-- <v-list-group value="Element">
-          <template v-slot:activator="{ props }">
-            <v-list-item
-              prepend-icon="mdi-collage"
-              v-bind="props"
-              title="Element"
-            >
-            </v-list-item>
-          </template>
-          <v-list-item
-            title="Grid System"
-            value="Grid System"
-            @click="pushLink('system')"
-          >
-          </v-list-item>
-          <v-list-item
-            title="Component"
-            value="Component"
-            @click="pushLink('component')"
-          >
-          </v-list-item>
-          <v-list-item title="From" value="From" @click="pushLink('from')">
-          </v-list-item>
-          <v-list-item title="Table" value="Table" @click="pushLink('table')">
-          </v-list-item>
-          <v-list-item title="Card" value="Card" @click="pushLink('card')">
-          </v-list-item>
-          <v-list-item title="Chart" value="Chart" @click="pushLink('chart')">
-          </v-list-item>
-        </v-list-group>
-
-        <v-list-group value="Basic Layout">
-          <template v-slot:activator="{ props }">
-            <v-list-item
-              prepend-icon="mdi-layers"
-              v-bind="props"
-              title="Basic Layout"
-            >
-            </v-list-item>
-          </template>
-          <v-list-item
-            title="Widget"
-            value="Widget"
-            @click="pushLink('widget')"
-          >
-          </v-list-item>
-          <v-list-item
-            title="新增資料"
-            value="addNews"
-            @click="pushLink('addNews')"
-          >
-          </v-list-item>
-          <v-list-item
-            title="多媒體資料庫"
-            value="mediaPhoto"
-            @click="pushLink('mediaPhoto')"
-          >
-          </v-list-item>
-        </v-list-group>
-
-        <v-list-group value="login">
-          <template v-slot:activator="{ props }">
-            <v-list-item
-              prepend-icon="mdi-login"
-              v-bind="props"
-              append-icon=""
-              title="login"
-              @click="pushLink('login')"
-            >
-            </v-list-item>
-          </template>
-        </v-list-group> -->
       </v-list>
-      <div class="userInfo bg-primary">
+      <div class="userInfo">
         <v-avatar image="~@/assets/images/account.jpg" size="35"></v-avatar>
         <ul class="">
           <li>Elle Wang</li>
@@ -173,8 +101,6 @@ export default {
     windowWidth: "",
     railWidth: "1",
     open: ["Users"],
-    theme: "default",
-    themeDark: "false",
     opened: ["案件管理"],
     overlay: false,
     isSmallScreen: window.innerWidth < 768,
@@ -185,7 +111,6 @@ export default {
   methods: {
     handleResize() {
       this.windowWidth = window.innerWidth;
-      // this.windowWidth < 991 ? (this.railWidth = 1) : (this.railWidth = 1);
       this.isSmallScreen = window.innerWidth < 991;
     },
     menuTarget(newOpened) {

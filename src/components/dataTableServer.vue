@@ -4,12 +4,160 @@
     :headers="headers"
     :items-length="totalItems"
     :items="serverItems"
+    show-select
     :loading="loading"
     item-value="name"
     :items-per-page-text="customItemsPerPageText"
     @update:options="loadItems"
   >
-    <template v-slot:item="{ item }">
+    <template v-slot:item.iron="{ item }">
+      <!-- <div class="btnGroup d-flex">
+        <v-btn elevation="0" color="primary" class="mr-1">刪除</v-btn>
+        <v-btn elevation="0" color="primary" variant="outlined">新增</v-btn>
+      </div> -->
+      <v-select
+        width="160"
+        label="下拉式選單"
+        single-line
+        density="compact"
+        hide-details="auto"
+        :items="['選項ㄧ', '選項二', '選項三']"
+      ></v-select>
+    </template>
+    <template v-slot:item.export="{ item }">
+      <v-dialog class="dialogCard" max-width="500" scrollable>
+        <template v-slot:activator="{ props: activatorProps }">
+          <v-btn
+            elevation="0"
+            color="primary"
+            class="mr-1"
+            variant="text"
+            v-bind="activatorProps"
+            icon="mdi-tray-arrow-down"
+          ></v-btn>
+        </template>
+        <template v-slot:default="{ isActive }">
+          <v-card title="匯出名單">
+            <v-card-text class="px-4">
+              <div>
+                <h4 class="text-gray subtitle ml-3">
+                  名單將以加密壓縮檔案下載，請設定您的密碼！
+                </h4>
+                <v-form>
+                  <v-container>
+                    <v-row class="formGrp">
+                      <v-col class="pb-2" cols="12" lg="">
+                        <label class="text-gray font-weight-bold" for=""
+                          >檔案格式
+                          <abbr
+                            class="necessary"
+                            title="為必填(選)欄位,不能為空白。"
+                            >*</abbr
+                          ></label
+                        >
+                      </v-col>
+                      <v-col cols="12" class="pt-0">
+                        <v-select
+                          label="下拉式選單"
+                          single-line
+                          density="compact"
+                          hide-details="auto"
+                          :items="[
+                            'Microsoft Excel(.xlsx)',
+                            'OpenDocument 試算表(.ods) ',
+                          ]"
+                        ></v-select>
+                      </v-col>
+                    </v-row>
+                    <v-row class="formGrp">
+                      <v-col class="pb-2" cols="12" lg="">
+                        <label class="text-gray font-weight-bold" for=""
+                          >密碼設定
+                          <abbr
+                            class="necessary"
+                            title="為必填(選)欄位,不能為空白。"
+                            >*</abbr
+                          ></label
+                        >
+                      </v-col>
+                      <v-col cols="12" class="pt-0">
+                        <v-text-field
+                          label="文字標準表單"
+                          density="compact"
+                          single-line
+                          hide-details="auto"
+                        ></v-text-field>
+                      </v-col>
+                    </v-row>
+                    <v-row class="formGrp">
+                      <v-col class="pb-2" cols="12" lg="">
+                        <label class="text-gray font-weight-bold" for=""
+                          >再次確認密碼
+                          <abbr
+                            class="necessary"
+                            title="為必填(選)欄位,不能為空白。"
+                            >*</abbr
+                          ></label
+                        >
+                      </v-col>
+                      <v-col cols="12" class="pt-0">
+                        <v-text-field
+                          label="文字標準表單"
+                          density="compact"
+                          single-line
+                          hide-details="auto"
+                        ></v-text-field>
+                      </v-col>
+                    </v-row>
+                  </v-container>
+                </v-form>
+              </div>
+            </v-card-text>
+            <v-card-actions class="d-block">
+              <div class="d-flex justify-center pa-4 pt-2">
+                <v-btn
+                  class="bg-secondary btn mx-2"
+                  text="取消"
+                  variant="flat"
+                  @click="isActive.value = false"
+                ></v-btn>
+                <v-btn
+                  text="確認匯出"
+                  class="btn mx-2"
+                  variant="flat"
+                  @click="isActive.value = false"
+                ></v-btn>
+              </div>
+            </v-card-actions>
+          </v-card>
+        </template>
+      </v-dialog>
+      <!-- <v-menu transition="slide-y-transition">
+        <template v-slot:activator="{ props }">
+          <v-btn icon="mdi-cog" class="ma-2" v-bind="props" size="small">
+          </v-btn>
+        </template>
+        <v-card class="pa-2">
+          <v-btn
+            variant="outlined"
+            class="my-1"
+            block
+            color="primary"
+            prepend-icon="mdi-delete"
+            >刪除</v-btn
+          >
+          <v-btn
+            variant="outlined"
+            class="my-1"
+            block
+            prepend-icon="mdi-pencil"
+            color="primary"
+            >編輯</v-btn
+          >
+        </v-card>
+      </v-menu> -->
+    </template>
+    <!-- <template v-slot:item="{ item }">
       <tr>
         <td class="">{{ item.id }}</td>
         <td class="">{{ item.name }}</td>
@@ -19,23 +167,18 @@
         <td>{{ item.status }}</td>
         <td>
           <div class="btnGroup d-flex">
-            <v-btn elevation="0" color="primary" size="small" class="mr-1"
-              >刪除</v-btn
-            >
-            <v-btn elevation="0" color="primary" variant="outlined" size="small"
-              >新增</v-btn
-            >
+            <v-btn elevation="0" color="primary" class="mr-1">刪除</v-btn>
+            <v-btn elevation="0" color="primary" variant="outlined">新增</v-btn>
           </div>
         </td>
         <td class="d-flex justify-center align-center">
           <v-menu transition="slide-y-transition">
             <template v-slot:activator="{ props }">
-              <v-btn icon="mdi-cog" class="ma-2" v-bind="props" size="x-small">
+              <v-btn icon="mdi-cog" class="ma-2" v-bind="props" size="small">
               </v-btn>
             </template>
             <v-card class="pa-2">
               <v-btn
-                size="small"
                 variant="outlined"
                 class="my-1"
                 block
@@ -44,7 +187,6 @@
                 >刪除</v-btn
               >
               <v-btn
-                size="small"
                 variant="outlined"
                 class="my-1"
                 block
@@ -56,50 +198,46 @@
           </v-menu>
         </td>
       </tr>
-    </template>
+    </template> -->
   </v-data-table-server>
 </template>
 <script>
 const desserts = [
   {
     id: "001",
-    name: "陳小姐",
-    class: "事務科",
-    title: "事務員",
-    password: "2wsx@@(OL>",
-    status: "待審",
+    time: "2024/08/27",
+    name: "113年9/4銀髮體適能班1",
+    class: "報名",
+    rule: "事務員",
+    admin: "萬華區",
+    village: "和德里",
+    status: "待審核",
+    num: 65,
+    note: "",
   },
   {
     id: "002",
-    name: "王先生",
-    class: "事務科",
-    title: "事務員",
-    password: "2wsx@@(OL>",
-    status: "待審",
+    time: "2024/08/27",
+    name: "113年9/4銀髮體適能班2",
+    class: "報名",
+    rule: "事務員",
+    admin: "萬華區",
+    village: "和德里",
+    status: "待審核",
+    num: 65,
+    note: "",
   },
   {
     id: "003",
-    name: "陳小姐",
-    class: "事務科",
-    title: "事務員",
-    password: "2wsx@@(OL>",
-    status: "待審",
-  },
-  {
-    id: "004",
-    name: "林先生",
-    class: "事務科",
-    title: "事務員",
-    password: "2wsx@@(OL>",
-    status: "待審",
-  },
-  {
-    id: "005",
-    name: "賴先生",
-    class: "事務科",
-    title: "事務員",
-    password: "2wsx@@(OL>",
-    status: "待審",
+    time: "2024/08/27",
+    name: "113年9/4銀髮體適能班3",
+    class: "報名",
+    rule: "事務員",
+    admin: "萬華區",
+    village: "和德里",
+    status: "待審核",
+    num: 65,
+    note: "",
   },
 ];
 
@@ -132,6 +270,7 @@ const FakeAPI = {
 export default {
   data: () => ({
     itemsPerPage: 5,
+    selected: [],
     headers: [
       {
         title: "帳號",
@@ -139,25 +278,16 @@ export default {
         sortable: false,
         key: "id",
       },
-      { title: "姓名", key: "name", align: "start", sortable: false },
-      { title: "單位", key: "class", align: "start", sortable: false },
-      { title: "職稱", key: "title", align: "start", sortable: false },
-      { title: "申請時密碼", key: "password", align: "start", sortable: false },
-      { title: "狀態", key: "status", align: "start", sortable: false },
-      {
-        title: "動作",
-        key: "iron",
-        align: "start",
-        sortable: false,
-        width: 100,
-      },
-      {
-        title: "功能",
-        key: "function",
-        align: "center",
-        sortable: false,
-        width: 100,
-      },
+      { title: "活動日期", key: "time", align: "start", sortable: false },
+      { title: "標題", key: "name", align: "start", sortable: false },
+      { title: "表單類型", key: "class", align: "start", sortable: false },
+      { title: "規則", key: "rule", align: "start", sortable: false },
+      { title: "行政區", key: "admin", align: "start", sortable: false },
+      { title: "村里", key: "village", align: "start", sortable: false },
+      { title: "審核", key: "status", align: "start", sortable: false },
+      { title: "登記人數", key: "num", align: "start", sortable: false },
+      { title: "匯出名單", key: "export", align: "start", sortable: false },
+      { title: "備註", key: "note", align: "start", sortable: false },
     ],
     customItemsPerPageText: "每頁顯示項目",
     serverItems: [],

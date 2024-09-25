@@ -5,6 +5,7 @@
 .v-list-item__prepend > .v-icon {
   margin-inline-end: 0.25rem;
   font-size: 20px !important;
+  opacity: 1 !important;
 }
 .v-list-item--nav .v-list-item-title {
   line-height: 1.5em;
@@ -13,10 +14,21 @@
   border-radius: 20px !important;
 }
 .v-list-group--open {
+  position: relative;
   > .v-list-item--active {
     background-color: $primary;
     color: #fff;
     font-size: 1rem;
     font-weight: bold;
+  }
+  &::after {
+    position: absolute;
+    bottom: -25px;
+    width: 208px;
+    height: 25px;
+    content: '';
+    opacity: 0.6;
+    background: url('@/assets/images/shadow.png');
+    background-size: contain;
   }
 }
