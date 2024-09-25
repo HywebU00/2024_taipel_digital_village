@@ -55,12 +55,12 @@ export default {
       desserts: [
         {
           name: "首頁",
-          link: "",
+          link: "https://hywebu00.github.io/2024_taipel_digital_village/#/",
           note: "",
         },
         {
           name: "登入頁",
-          link: "",
+          link: "https://hywebu00.github.io/2024_taipel_digital_village/#/login",
           note: "",
         },
         {
