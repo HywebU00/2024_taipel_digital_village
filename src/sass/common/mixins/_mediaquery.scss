@@ -2,7 +2,7 @@
 @mixin screen($size) {
   $xxl_desktop: '(min-width: #{$screen-xxl})'; // max-width >= 2560px
   $xl_desktop: '(min-width: #{$screen-xl})'; // max-width >= 1920px
-  $desktop: '(min-width: #{$screen-lg})'; // max-width >= 1280px
+  $desktop: '(max-width: #{$screen-lg})'; // max-width >= 1280px
   $notebook: '(max-width: #{$screen-md-max})'; // max-width <= 960px
   $tablet: '(max-width: #{$screen-sm-max})'; // max-width <= 600x
   $mobile: '(max-width: #{$screen-xs-max})'; // max-width <= 556px

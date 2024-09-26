@@ -215,7 +215,7 @@ main {
   &.v-main {
     --v-layout-top: 0px !important;
     > div {
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.95);
       box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
       margin: 0.5rem 0rem 0 0.5rem;
       border-radius: 1rem 0 0 0;
@@ -239,6 +239,10 @@ main {
 
       > .v-container {
         height: 100%;
+        padding: 1rem 3rem;
+        @include screen('notebook') {
+          padding: 1rem;
+        }
       }
     }
   }
@@ -251,7 +255,8 @@ header {
   }
 }
 .v-application__wrap {
-  background: url('@/assets/images/bg_main.jpg') top left !important;
+  background: url('@/assets/images/bg_main.jpg') top left;
+  background-size: cover;
 }
 .header {
   height: 80px !important;
@@ -286,7 +291,7 @@ header {
 .v-main {
   h2 {
     color: $primary;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
     margin-top: 0.5rem;
     position: relative;
     padding-left: 1.75rem;
@@ -308,5 +313,56 @@ header {
   }
   h4 {
     font-weight: bold;
+  }
+  .filterList {
+    > div {
+      &:first-child {
+        padding-left: 0.75rem;
+      }
+      &:last-child {
+        padding-right: 0.75rem;
+      }
+      padding: 0 0.25rem 0.75rem 0.25rem;
+      @include screen('desktop') {
+        &:nth-child(3n) {
+          // background-color: rgb(85, 106, 99);
+          padding-right: 0.75rem;
+        }
+        &:nth-child(3n + 1) {
+          // background-color: aquamarine;
+          padding-left: 0.75rem;
+        }
+      }
+      @include screen('tablet') {
+        &:nth-child(3n),
+        &:nth-child(3n + 1) {
+          padding: 0 0.25rem 0.75rem 0.25rem;
+        }
+        &:nth-child(2n) {
+          padding-right: 0.75rem;
+        }
+        &:nth-child(2n + 1) {
+          padding-left: 0.75rem;
+        }
+      }
+    }
+  }
+  .searchList {
+    min-width: 360px;
+    button {
+      margin-left: 0.5rem;
+      width: 100px;
+    }
+    @include screen('desktop') {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+  }
+  .btnList {
+    .v-btn {
+      &:last-child {
+        margin-right: 0 !important;
+      }
+    }
   }
 }

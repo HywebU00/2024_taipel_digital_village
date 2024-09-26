@@ -45,14 +45,14 @@ input:-internal-autofill-selected {
   .v-input:not(.v-checkbox) {
     border: none;
     .v-field {
-      background: #fcfbfb;
+      background: lighten(#e5e5e3, 6%); //#fcfbfb;
       border-radius: rem(20);
-      .v-field__field {
-        height: rem(48);
-        input {
-          height: rem(48);
-        }
-      }
+      // .v-field__field {
+      //   height: rem(48);
+      //   input {
+      //     height: rem(48);
+      //   }
+      // }
       input {
         &::placeholder {
           color: #000;
@@ -61,7 +61,7 @@ input:-internal-autofill-selected {
       }
     }
     .v-field__input {
-      height: 3rem;
+      // height: 3rem;
     }
     .v-field__prepend-inner {
       > .v-icon {
@@ -73,6 +73,15 @@ input:-internal-autofill-selected {
     }
     .v-field__outline {
       display: none;
+    }
+  }
+}
+.v-field__field {
+  &:has(input[type='file']) {
+    .v-field__input {
+      height: 40px;
+      padding: 0.25rem 1rem;
+      min-height: auto;
     }
   }
 }

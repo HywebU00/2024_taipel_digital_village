@@ -10,20 +10,6 @@
     :items-per-page-text="customItemsPerPageText"
     @update:options="loadItems"
   >
-    <template v-slot:item.iron="{ item }">
-      <!-- <div class="btnGroup d-flex">
-        <v-btn elevation="0" color="primary" class="mr-1">刪除</v-btn>
-        <v-btn elevation="0" color="primary" variant="outlined">新增</v-btn>
-      </div> -->
-      <v-select
-        width="160"
-        label="下拉式選單"
-        single-line
-        density="compact"
-        hide-details="auto"
-        :items="['選項ㄧ', '選項二', '選項三']"
-      ></v-select>
-    </template>
     <template v-slot:item.export="{ item }">
       <v-dialog class="dialogCard" max-width="500" scrollable>
         <template v-slot:activator="{ props: activatorProps }">
@@ -132,73 +118,123 @@
           </v-card>
         </template>
       </v-dialog>
-      <!-- <v-menu transition="slide-y-transition">
-        <template v-slot:activator="{ props }">
-          <v-btn icon="mdi-cog" class="ma-2" v-bind="props" size="small">
-          </v-btn>
-        </template>
-        <v-card class="pa-2">
-          <v-btn
-            variant="outlined"
-            class="my-1"
-            block
-            color="primary"
-            prepend-icon="mdi-delete"
-            >刪除</v-btn
-          >
-          <v-btn
-            variant="outlined"
-            class="my-1"
-            block
-            prepend-icon="mdi-pencil"
-            color="primary"
-            >編輯</v-btn
-          >
-        </v-card>
-      </v-menu> -->
     </template>
-    <!-- <template v-slot:item="{ item }">
-      <tr>
-        <td class="">{{ item.id }}</td>
-        <td class="">{{ item.name }}</td>
-        <td class="">{{ item.class }}</td>
-        <td class="">{{ item.title }}</td>
-        <td class="">{{ item.password }}</td>
-        <td>{{ item.status }}</td>
-        <td>
-          <div class="btnGroup d-flex">
-            <v-btn elevation="0" color="primary" class="mr-1">刪除</v-btn>
-            <v-btn elevation="0" color="primary" variant="outlined">新增</v-btn>
-          </div>
-        </td>
-        <td class="d-flex justify-center align-center">
-          <v-menu transition="slide-y-transition">
-            <template v-slot:activator="{ props }">
-              <v-btn icon="mdi-cog" class="ma-2" v-bind="props" size="small">
-              </v-btn>
-            </template>
-            <v-card class="pa-2">
-              <v-btn
-                variant="outlined"
-                class="my-1"
-                block
-                color="primary"
-                prepend-icon="mdi-delete"
-                >刪除</v-btn
-              >
-              <v-btn
-                variant="outlined"
-                class="my-1"
-                block
-                prepend-icon="mdi-pencil"
-                color="primary"
-                >編輯</v-btn
-              >
-            </v-card>
-          </v-menu>
-        </td>
-      </tr>
-    </template> -->
+    <template v-slot:item.edit="{ item }">
+      <v-dialog class="dialogCard" max-width="600" scrollable>
+        <template v-slot:activator="{ props: activatorProps }">
+          <v-btn
+            class="elevation-0 text-subtitle-2 ml-3"
+            v-bind="activatorProps"
+            icon="mdi-pencil"
+            variant="text"
+          ></v-btn>
+        </template>
+        <template v-slot:default="{ isActive }">
+          <v-card title="編輯人員">
+            <v-card-text class="px-4 mt-0">
+              <div class="editInfoList">
+                <ul>
+                  <li class="">
+                    <div class="text-gray mx-3 font-weight-bold title">
+                      層級
+                    </div>
+                    <div class="">里辦公室</div>
+                  </li>
+                  <li class="">
+                    <div class="text-gray mx-3 font-weight-bold title">
+                      區里
+                    </div>
+                    <div class="">松山區-東榮里</div>
+                  </li>
+                  <li class="">
+                    <div class="text-gray mx-3 font-weight-bold title">
+                      管理人員
+                    </div>
+                    <div class="">
+                      <v-btn variant="flat" class="my-1">新增人員</v-btn>
+                      <v-table class="table">
+                        <thead class="bg-thead">
+                          <tr>
+                            <th class="">帳號</th>
+                            <th class="">姓名</th>
+                            <th class="">角色</th>
+                            <th class="" style="width: 50px">移除</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr v-for="item in 3" :key="item">
+                            <td class="">A2*******7</td>
+                            <td class="">鄭玉梅</td>
+                            <td class="">里長</td>
+                            <td>
+                              <v-btn
+                                icon="mdi-trash-can-outline"
+                                variant="text"
+                              ></v-btn>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </v-table>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </v-card-text>
+            <v-card-actions class="d-block">
+              <div class="d-flex justify-center pa-4 pt-2">
+                <v-btn
+                  text="關閉"
+                  class="btn"
+                  variant="flat"
+                  @click="isActive.value = false"
+                ></v-btn>
+              </div>
+            </v-card-actions>
+          </v-card>
+        </template>
+      </v-dialog>
+    </template>
+    <template v-slot:item.delete="{ item }">
+      <v-dialog class="dialogCard" max-width="360" scrollable>
+        <template v-slot:activator="{ props: activatorProps }">
+          <v-btn
+            elevation="0"
+            color="primary"
+            class="mr-1"
+            variant="text"
+            v-bind="activatorProps"
+            icon="mdi-trash-can-outline"
+          ></v-btn>
+        </template>
+        <template v-slot:default="{ isActive }">
+          <v-card class="pt-6" title="">
+            <v-card-text class="px-4">
+              <div>
+                <h4 class="text-gray subtitle ml-3 text-center">
+                  確認解刪除？
+                </h4>
+              </div>
+            </v-card-text>
+            <v-card-actions class="d-block">
+              <div class="d-flex justify-center pa-4 pt-2">
+                <v-btn
+                  class="bg-secondary btn mx-2"
+                  text="取消"
+                  variant="flat"
+                  @click="isActive.value = false"
+                ></v-btn>
+                <v-btn
+                  text="確定"
+                  class="btn mx-2"
+                  variant="flat"
+                  @click="isActive.value = false"
+                ></v-btn>
+              </div>
+            </v-card-actions>
+          </v-card>
+        </template>
+      </v-dialog>
+    </template>
   </v-data-table-server>
 </template>
 <script>
@@ -279,15 +315,52 @@ export default {
         key: "id",
       },
       { title: "活動日期", key: "time", align: "start", sortable: false },
-      { title: "標題", key: "name", align: "start", sortable: false },
-      { title: "表單類型", key: "class", align: "start", sortable: false },
-      { title: "規則", key: "rule", align: "start", sortable: false },
-      { title: "行政區", key: "admin", align: "start", sortable: false },
-      { title: "村里", key: "village", align: "start", sortable: false },
-      { title: "審核", key: "status", align: "start", sortable: false },
-      { title: "登記人數", key: "num", align: "start", sortable: false },
+      {
+        title: "標題",
+        key: "name",
+        align: "start",
+        sortable: false,
+        width: "20%",
+      },
+      {
+        title: "表單類型",
+        key: "class",
+        align: "start",
+        sortable: false,
+        width: "8%",
+      },
+      {
+        title: "規則",
+        key: "rule",
+        align: "start",
+        sortable: false,
+        width: "8%",
+      },
+      {
+        title: "行政區",
+        key: "admin",
+        align: "start",
+        sortable: false,
+        width: "8%",
+      },
+      {
+        title: "村里",
+        key: "village",
+        align: "start",
+        sortable: false,
+        width: "8%",
+      },
+      {
+        title: "審核",
+        key: "status",
+        align: "start",
+        sortable: false,
+        width: "8%",
+      },
+      { title: "登記人數", key: "num", align: "end", sortable: false },
       { title: "匯出名單", key: "export", align: "start", sortable: false },
-      { title: "備註", key: "note", align: "start", sortable: false },
+      { title: "編輯", key: "edit", align: "center", sortable: false },
+      { title: "刪除", key: "delete", align: "start", sortable: false },
     ],
     customItemsPerPageText: "每頁顯示項目",
     serverItems: [],

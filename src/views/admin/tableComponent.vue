@@ -384,7 +384,6 @@ export default {
     ],
   }),
   methods: {},
-  //table serve
   components: {
     dataTableServer,
     dataTable,

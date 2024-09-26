@@ -17,10 +17,11 @@ export default createVuetify({
       default: {
         dark: false,
         colors: {
-          primary: "#0380a7", //"#00788c",
+          primary: "#00788c",
           secondary: "4c4c4ca",
           textColor: "#000000",
           gray: "4c4c4ca",
+          thead: "#dadfe0",
           // loginColor: "#0156a2",
           // light: "#8eebb1",
           // navText: "#262626",

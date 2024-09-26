@@ -2,7 +2,6 @@
   <v-menu v-model="menu" :close-on-content-click="false" location="center">
     <template v-slot:activator="{ props }">
       <v-text-field
-        variant="solo"
         label="日期選擇"
         v-bind="props"
         hide-details="auto"
@@ -12,14 +11,15 @@
         prepend-inner-icon="mdi-calendar-range"
       ></v-text-field>
     </template>
-    <v-card min-width="300">
-      <v-divider></v-divider>
-      <v-date-picker hide-header v-model="date"></v-date-picker>
-      <v-card-actions>
-        <v-btn variant="text" @click="menu = false"> 取消 </v-btn>
+    <v-card min-width="250" class="pa-3">
+      <v-date-picker color="primary" hide-header v-model="date"></v-date-picker>
+      <v-card-actions class="d-flex justify-center">
+        <v-btn variant="flat" color="secondary" @click="menu = false">
+          取消
+        </v-btn>
         <v-btn
+          variant="flat"
           color="primary"
-          variant="text"
           @click="
             {
               formatted(), (menu = false);
