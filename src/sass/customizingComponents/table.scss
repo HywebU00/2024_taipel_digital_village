@@ -14,7 +14,11 @@ table {
   border-radius: 15px !important;
   margin-top: 0.75rem !important;
 }
-
+.dataTable {
+  td {
+    min-width: 100px !important;
+  }
+}
 .editInfoList {
   li {
     margin-bottom: 1rem;

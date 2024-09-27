@@ -28,7 +28,7 @@
     height: 25px;
     content: '';
     opacity: 0.6;
-    background: url('@/assets/images/shadow.png');
+    background: url('@/assets/images/shadow.png') no-repeat;
     background-size: contain;
   }
 }

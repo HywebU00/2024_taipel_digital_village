@@ -19,6 +19,10 @@ const routes = [
         component: () => import("@/views/admin/defaultComponent.vue"),
       },
       {
+        path: "event",
+        component: () => import("@/views/admin/eventComponent.vue"),
+      },
+      {
         path: "from",
         component: () => import("@/views/admin/fromComponent.vue"),
       },

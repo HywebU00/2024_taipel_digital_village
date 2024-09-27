@@ -209,4 +209,114 @@
 .v-card {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px !important;
   border-radius: 1rem !important;
+  .v-card-text {
+    font-size: 1rem;
+  }
+}
+.commentCard {
+  margin-bottom: 2rem;
+  .v-textarea {
+    .v-field__input {
+      mask-image: none;
+      border-radius: 1rem;
+      background-color: darken(#f4f4f3, 3%) !important;
+    }
+  }
+  .btnGrp {
+    flex-wrap: wrap;
+  }
+}
+.itemCard {
+  margin-bottom: 2rem;
+  .v-card-title {
+    font-weight: bold;
+    color: $primary;
+  }
+  .v-card-text {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        width: 50%;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        span {
+          color: $grayText;
+          display: inline-block;
+          padding-right: 1rem;
+          position: relative;
+          &::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            top: 3px;
+            right: 0.5rem;
+            height: 1rem;
+            background-color: #ccc;
+          }
+        }
+        @media screen and (max-width: 1680px) {
+          margin-bottom: 0.75rem;
+          span {
+            display: block;
+            &::after {
+              display: none;
+            }
+          }
+        }
+        @include screen('desktop') {
+          width: 100%;
+          margin-bottom: 0.75rem;
+          span {
+            display: inline-block;
+            &::after {
+              display: block;
+            }
+          }
+        }
+        @include screen('notebook') {
+          margin-bottom: 0.5rem;
+          width: 50%;
+          span {
+            display: inline-block;
+            &::after {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+  .btnGrp {
+    flex-wrap: wrap !important;
+    // @media screen and (max-width: 1400px) {
+    //   .v-btn {
+    //     width: 45%;
+
+    //     margin-bottom: 0.5rem;
+    //   }
+    // }
+    // @include screen('notebook') {
+    //   .v-btn {
+    //     width: auto;
+    //   }
+    // }
+  }
+}
+.logCard {
+  @extend .itemCard;
+  .v-card-text {
+    ul {
+      li {
+        span {
+          display: block;
+          margin-bottom: 0;
+          &::after {
+            display: none;
+          }
+        }
+        width: 100%;
+      }
+    }
+  }
 }

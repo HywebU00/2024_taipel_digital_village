@@ -9,7 +9,7 @@
             src="~@/assets/images/logo.png"
             alt=""
           />
-          <p class="text-h5">管理平台樣板</p>
+          <p class="text-h5">里辦數位里民系統</p>
         </h3>
         <v-btn color="primary"
           ><a href="https://github.com/HywebU00/2024_taipel_digital_village"
@@ -64,8 +64,8 @@ export default {
           note: "",
         },
         {
-          name: "新增頁",
-          link: "",
+          name: "活動內容",
+          link: "https://hywebu00.github.io/2024_taipel_digital_village/#/event",
           note: "",
         },
         {

@@ -465,7 +465,7 @@
     <v-row>
       <v-col cols="12">
         <v-card class="pa-3 pa-md-6 card">
-          <dataTableServer />
+          <dataTableServer class="dataTable" />
         </v-card>
       </v-col>
     </v-row>

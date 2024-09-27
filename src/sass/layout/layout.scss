@@ -215,7 +215,7 @@ main {
   &.v-main {
     --v-layout-top: 0px !important;
     > div {
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.9);
       box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
       margin: 0.5rem 0rem 0 0.5rem;
       border-radius: 1rem 0 0 0;
@@ -290,6 +290,7 @@ header {
 
 .v-main {
   h2 {
+    font-size: rem(28);
     color: $primary;
     margin-bottom: 2.5rem;
     margin-top: 0.5rem;
@@ -301,7 +302,7 @@ header {
       content: '';
       width: 18px;
       top: 4px;
-      left: 8px;
+      left: 6px;
       height: 18px;
       background: url('@/assets/images/arrow_icon.png') no-repeat;
       background-size: contain;
@@ -310,6 +311,17 @@ header {
   .v-breadcrumbs {
     padding: 1rem 0;
     font-weight: bold;
+  }
+  h3 {
+    font-size: rem(24);
+    margin-left: 0.25rem;
+    .v-select {
+      .v-field {
+        background-color: darken(#f4f4f3, 3%) !important;
+      }
+
+      min-width: 150px;
+    }
   }
   h4 {
     font-weight: bold;
@@ -364,5 +376,8 @@ header {
         margin-right: 0 !important;
       }
     }
+  }
+  .stickyBlock {
+    top: 32px;
   }
 }
