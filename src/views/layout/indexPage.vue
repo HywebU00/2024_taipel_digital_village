@@ -69,17 +69,17 @@ export default {
           note: "",
         },
         {
-          name: "fancyBox頁",
+          name: "",
           link: "",
           note: "",
         },
         {
-          name: "相簿頁",
+          name: "",
           link: "",
           note: "",
         },
         {
-          name: "樹狀分類＋功能頁",
+          name: "",
           link: "",
           note: "",
         },
