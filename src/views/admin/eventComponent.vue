@@ -17,10 +17,10 @@
               </div>
               <div class="justify-center d-flex mt-3 btnGrp">
                 <v-btn variant="flat" class="ma-1" color="secondary">
-                  授權管理
+                  審核不通過
                 </v-btn>
                 <v-btn variant="flat" class="ma-1" color="primary">
-                  簽收作業
+                  審核通過
                 </v-btn>
               </div>
             </v-sheet>
