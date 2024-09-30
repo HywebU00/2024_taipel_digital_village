@@ -20,6 +20,7 @@
 
       <div class="d-flex mb-2 justify-center">
         <div style="width: 75%" class="mt-1">
+          <h3 class="text-center mb-3 text-primary">後台頁面列表</h3>
           <v-card>
             <v-table>
               <thead class="bg-primary">
@@ -54,17 +55,17 @@ export default {
     return {
       desserts: [
         {
-          name: "首頁",
+          name: "後台首頁",
           link: "https://hywebu00.github.io/2024_taipel_digital_village/#/",
           note: "",
         },
         {
-          name: "登入頁",
+          name: "後台登入頁",
           link: "https://hywebu00.github.io/2024_taipel_digital_village/#/login",
           note: "",
         },
         {
-          name: "活動內容",
+          name: "後台活動內容",
           link: "https://hywebu00.github.io/2024_taipel_digital_village/#/event",
           note: "",
         },
