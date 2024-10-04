@@ -23,7 +23,7 @@
   }
   &::after {
     position: absolute;
-    bottom: -25px;
+    top: 44px;
     width: 208px;
     height: 25px;
     content: '';
@@ -31,4 +31,10 @@
     background: url('@/assets/images/shadow.png') no-repeat;
     background-size: contain;
   }
+  // > .v-list-group__items > .v-list-item {
+  //   .v-list-item-title {
+  //     font-weight: bolder;
+  //     margin-left: 2rem;
+  //   }
+  // }
 }

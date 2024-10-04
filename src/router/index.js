@@ -56,6 +56,28 @@ const routes = [
     path: "/login",
     component: () => import("@/views/layout/loginPage.vue"),
   },
+  {
+    path: "/front",
+    component: () => import("@/views/layout/frontLayout.vue"),
+    children: [
+      {
+        path: "/front",
+        component: () => import("@/views/front/defaultComponent.vue"),
+      },
+      {
+        path: "/front/card",
+        component: () => import("@/views/front/cardComponent.vue"),
+      },
+      {
+        path: "/front/auth",
+        component: () => import("@/views/front/authComponent.vue"),
+      },
+      {
+        path: "/front/method",
+        component: () => import("@/views/front/methodComponent.vue"),
+      },
+    ],
+  },
 ];
 
 const router = createRouter({

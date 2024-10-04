@@ -2,52 +2,12 @@
   <v-container class="container">
     <v-breadcrumbs :items="['首頁', '節點', '節點']"></v-breadcrumbs>
 
-    <h2>活動辦法</h2>
+    <h2>簽收作業</h2>
     <div class="">
       <v-row class="">
         <!-- 左側選單start -->
         <v-col cols="12" md="4">
           <div class="position-sticky stickyBlock">
-            <v-sheet color="transparent" class="commentCard">
-              <h3 class="text-primary mb-5">
-                <span class="text-primary"> 審核備註</span>
-              </h3>
-              <div class="formGrp">
-                <v-textarea hide-details="auto" variant="outlined"></v-textarea>
-              </div>
-              <div class="justify-center d-flex mt-3 btnGrp">
-                <v-btn variant="flat" class="ma-1" color="secondary">
-                  審核不通過
-                </v-btn>
-                <v-btn variant="flat" class="ma-1" color="primary">
-                  審核通過
-                </v-btn>
-              </div>
-            </v-sheet>
-            <v-card class="itemCard" v-for="i in 1" :key="i">
-              <div class="cardContainer">
-                <div class="info">
-                  <v-card-item>
-                    <v-card-title class="mt-3">光信里中元普渡活動</v-card-title>
-                  </v-card-item>
-                  <v-card-text>
-                    <v-divider class="mb-2"></v-divider>
-                    <ul>
-                      <li><span>類型</span>物資發放</li>
-                      <li><span>規則</span>每戶每人領取一份</li>
-                      <li><span>發放人員</span>透過里辦</li>
-                      <li><span>經費來源</span>里鄰建設服</li>
-                      <li><span>區域</span>內湖區西康里</li>
-                      <li><span>已簽收/上線人數</span>32/無</li>
-                      <li><span>啟用拍照</span>Yes</li>
-                      <li><span>啟用電子簽名</span>32/無</li>
-                      <li><span>審核</span>No</li>
-                      <li><span>發放日期</span>2024/9/10</li>
-                    </ul>
-                  </v-card-text>
-                </div>
-              </div>
-            </v-card>
             <v-card class="itemCard" v-for="i in 1" :key="i">
               <div class="cardContainer">
                 <div class="info">
@@ -66,35 +26,16 @@
                     </ul>
                   </v-card-text>
                   <v-card-actions class="d-flex justify-center mb-6 btnGrp">
-                    <v-btn variant="flat" color="primary"> 授權管理 </v-btn>
-                    <v-btn variant="flat" color="primary"> 簽收作業 </v-btn>
-                    <v-btn variant="flat" color="primary"> 簽收紀錄 </v-btn>
+                    <router-link to="/front/auth">
+                      <v-btn variant="flat" color="primary"> 授權管理 </v-btn>
+                    </router-link>
+                    <router-link to="/front/method">
+                      <v-btn variant="flat" color="primary"> 簽收作業 </v-btn>
+                    </router-link>
+                    <router-link to="/front/card">
+                      <v-btn variant="flat" color="primary"> 簽收紀錄 </v-btn>
+                    </router-link>
                   </v-card-actions>
-                </div>
-              </div>
-            </v-card>
-            <h3 class="text-primary mb-5">
-              <span class="text-primary"> 活動紀錄</span>
-            </h3>
-            <v-card class="logCard" v-for="i in 1" :key="i">
-              <div class="cardContainer">
-                <div class="info">
-                  <v-card-text>
-                    <ul>
-                      <li>
-                        <span>2024/09/02 09:25</span
-                        >表單管理/新增發放/新增送審/王小明
-                      </li>
-                      <li>
-                        <span>2024/09/02 09:25</span
-                        >表單管理/新增發放/新增送審/王小明
-                      </li>
-                      <li>
-                        <span>2024/09/02 09:25</span
-                        >表單管理/新增發放/新增送審/王小明
-                      </li>
-                    </ul>
-                  </v-card-text>
                 </div>
               </div>
             </v-card>
@@ -103,7 +44,7 @@
         <!-- 左側選單end -->
         <!-- 右側選單start -->
         <v-col cols="12" md="8" class="">
-          <h3 class="mb-5"><span class="text-primary"> 指定名單</span></h3>
+          <h3 class="mb-5"><span class="text-primary">簽收作業</span></h3>
           <v-card class="pa-3 pa-md-6 card">
             <dataTableServer class="dataTable" />
           </v-card>

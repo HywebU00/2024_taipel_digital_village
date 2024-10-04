@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app theme="front">
     <v-card class="header">
       <v-app-bar>
         <v-app-bar-nav-icon
@@ -39,11 +39,11 @@
         <v-list-group value="Home1">
           <template v-slot:activator="{ props }">
             <v-list-item
-              prepend-icon="mdi-application-edit-outline"
+              prepend-icon="mdi-checkbox-multiple-marked-outline"
               v-bind="props"
               append-icon=""
-              title="活動管理"
-              @click="pushLink('/')"
+              title="簽收作業"
+              @click="pushLink('/front/card')"
             >
             </v-list-item>
           </template>
@@ -51,38 +51,14 @@
         <v-list-group value="Home2">
           <template v-slot:activator="{ props }">
             <v-list-item
-              prepend-icon="mdi-chart-bar"
+              prepend-icon="mdi-application-edit-outline"
               v-bind="props"
               append-icon=""
-              title="統計報表"
-              @click="pushLink('/')"
+              title="活動管理"
+              @click="pushLink('/front')"
             >
             </v-list-item>
           </template>
-        </v-list-group>
-        <v-list-group value="Home3">
-          <template v-slot:activator="{ props }">
-            <v-list-item
-              prepend-icon="mdi-account-cog"
-              v-bind="props"
-              append-icon=""
-              title="帳號管理"
-              @click="pushLink('/')"
-            >
-            </v-list-item>
-          </template>
-          <v-list-item
-            title="網站管理1"
-            value="網站管理1"
-            @click="pushLink('')"
-          >
-          </v-list-item>
-          <v-list-item
-            title="網站管理2"
-            value="網站管理2"
-            @click="pushLink('')"
-          >
-          </v-list-item>
         </v-list-group>
       </v-list>
       <div class="userInfo">
@@ -104,6 +80,7 @@
 
 <script>
 import pageView from "./pageView.vue";
+import { useTheme } from "vuetify";
 export default {
   data: () => ({
     tab: null,
@@ -112,8 +89,7 @@ export default {
     value: 0,
     windowWidth: "",
     railWidth: "1",
-    open: ["Users"],
-    opened: ["案件管理"],
+    opened: ["Home2"],
     overlay: false,
     isSmallScreen: window.innerWidth < 768,
   }),
@@ -132,6 +108,7 @@ export default {
       this.$router.push({ path: item });
     },
   },
+
   mounted() {
     this.windowWidth = window.innerWidth;
     this.handleResize();

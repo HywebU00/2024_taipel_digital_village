@@ -328,3 +328,141 @@
     }
   }
 }
+
+.authCard {
+  // container-type: inline-size;
+  .v-card-text {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    .title {
+      position: relative;
+      padding-left: 2.5rem;
+      height: 1.5rem;
+
+      font-size: rem(18);
+      > span {
+        margin: 0 0.5rem;
+      }
+      &::before {
+        position: absolute;
+        content: '';
+        top: -0.5rem;
+        left: 0;
+        width: 2.5rem;
+        height: 2.5rem;
+        background: url('@/assets/images/user-icon.png') top right no-repeat;
+        background-size: contain;
+      }
+    }
+    .v-btn {
+      margin: 0 0.5rem;
+    }
+    .status {
+      margin-left: auto;
+      & > span {
+        &:first-child {
+          color: $grayText;
+          margin-right: 1rem;
+          &::after {
+            top: 0.35rem;
+            right: -0.5rem;
+            width: 1rem;
+            height: 1rem;
+            content: '';
+            position: absolute;
+            border-right: 1px solid $grayText;
+          }
+        }
+
+        position: relative;
+      }
+    }
+  }
+  // @container (min-width: 300px) {
+  //   width: 100% !important;
+
+  // }
+}
+
+.addAuthCard {
+  &.v-card {
+    background-color: transparent;
+    box-shadow: none !important;
+  }
+  .v-card-text {
+    display: flex;
+    align-items: center;
+  }
+  .title {
+    position: relative;
+    padding-left: 2.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    > span {
+      margin: 0 0.5rem;
+    }
+    &::before {
+      position: absolute;
+      content: '';
+      top: -0.5rem;
+      left: 0;
+      width: 2.5rem;
+      height: 2.5rem;
+      background: url('@/assets/images/user-add-icon.png') top right no-repeat;
+      background-size: contain;
+    }
+  }
+}
+.cardGrp {
+  .v-card {
+    margin-bottom: 0.25rem;
+    height: 100%;
+    .cardContainer {
+      height: 100%;
+    }
+    .info {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+  &:has(.authCard) {
+    container-type: inline-size;
+    @container (max-width: 800px) {
+      .authCard {
+        // background-color: red !important;
+        .info {
+          > div {
+            flex-wrap: wrap;
+          }
+          .title {
+            width: 100%;
+            margin-bottom: 1rem;
+          }
+          .v-btn {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+    @include screen('tablet') {
+      .authCard {
+        // background-color: blue;
+        .info {
+          .title {
+            width: auto;
+            margin-bottom: 0rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// @container (max-width: 800px) {
+//   .authCard,
+//   .title {
+//     background: green !important;
+//   }
+// }

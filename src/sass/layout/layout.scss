@@ -89,8 +89,8 @@
           padding-inline-start: 12px !important;
           padding: 4px 8px;
           .v-list-item-title {
-            margin-left: rem(24);
-            font-weight: 400;
+            margin-left: rem(36);
+            font-weight: bold;
           }
         }
       }
@@ -292,6 +292,12 @@ header {
       width: 70px;
       height: 70px !important;
     }
+  }
+}
+.backBtn {
+  display: none !important;
+  @include screen('notebook') {
+    display: block !important;
   }
 }
 //背景顏色設定

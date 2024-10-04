@@ -1,0 +1,39 @@
+//body 預設字級
+body {
+  .v-theme--front {
+    h2 {
+      color: $frontPrimary;
+    }
+    .v-list-group--open {
+      > .v-list-item--active {
+        background-color: $frontPrimary;
+      }
+    }
+    .userInfo {
+      background-color: $frontPrimary;
+    }
+    .itemCard {
+      .v-card-title {
+        color: $frontPrimary;
+      }
+    }
+    main {
+      &.v-main {
+        > div {
+          &::-webkit-scrollbar-thumb {
+            background-color: lighten($frontPrimary, 50);
+          }
+        }
+      }
+    }
+  }
+  &:has(.v-theme--front) {
+    .v-overlay-container {
+      .v-card {
+        .v-card-title {
+          color: $frontPrimary;
+        }
+      }
+    }
+  }
+}
