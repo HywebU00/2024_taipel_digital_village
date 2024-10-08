@@ -2,7 +2,7 @@
   <v-container class="container">
     <v-breadcrumbs :items="['首頁', '節點', '節點']"></v-breadcrumbs>
     <div class="d-flex justify-end">
-      <v-btn class="backBtn" variant="text" color="primary"> 回前頁 </v-btn>
+      <v-btn class="backBtn" variant="flat" color="secondary"> 回前頁 </v-btn>
     </div>
     <h2>簽收作業</h2>
     <div class="">
@@ -69,36 +69,56 @@
                   <div class="info">
                     <v-card-text class="">
                       <div class="title"></div>
-                      <!-- <v-btn
-                        variant="flat"
-                        color="primary"
-                        @click="dialog = true"
+                      <v-dialog
+                        class="dialogCard qrCodeCard"
+                        max-width="500"
+                        :fullscreen="dialogFull"
+                        transition="dialog-bottom-transition"
                       >
-                        新增授權
-                      </v-btn> -->
-                      <v-dialog class="dialogCard" max-width="500" scrollable>
                         <template v-slot:activator="{ props: activatorProps }">
                           <v-btn
                             variant="flat"
                             color="primary"
                             v-bind="activatorProps"
+                            @click="dialogWidth"
                           >
                             新增授權
                           </v-btn>
                         </template>
                         <template v-slot:default="{ isActive }">
                           <v-card title="">
+                            <div class="d-flex justify-end px-4">
+                              <v-btn
+                                class="closeBtn"
+                                variant="text"
+                                icon="mdi-close"
+                                color="secondary"
+                                @click="isActive.value = false"
+                              ></v-btn>
+                            </div>
                             <v-card-text class="px-4">
-                              <!-- <v-img url="qrCode.png"> </v-img> -->
-                              <v-img
-                                :width="200"
-                                aspect-ratio="1/1"
-                                class="mr-auto ml-auto"
-                                cover
-                                src="~@/assets/images/qrCode.png"
-                              ></v-img>
-                              <div class=""><span>有效時間：</span>02:59</div>
+                              <div class="">
+                                <v-img
+                                  aspect-ratio="1/1"
+                                  class="mr-auto ml-auto"
+                                  cover
+                                  src="~@/assets/images/qrCode.png"
+                                ></v-img>
+                                <div class="text">
+                                  <span>有效時間：</span>02:59
+                                </div>
+                              </div>
                             </v-card-text>
+                            <v-card-actions class="d-block">
+                              <div class="d-flex justify-center pa-4 pt-2">
+                                <v-btn
+                                  text="關閉"
+                                  class="btn mx-2"
+                                  variant="flat"
+                                  @click="isActive.value = false"
+                                ></v-btn>
+                              </div>
+                            </v-card-actions>
                           </v-card>
                         </template>
                       </v-dialog>
@@ -116,17 +136,18 @@
 </template>
 
 <script>
-import dataTableServer from "@/components/dataTableServer.vue";
-//載入 Ｖuetify組合 日期選擇器
-import datepickerModalVue from "@/components/datepickerModal.vue";
 export default {
-  data: () => ({}),
-  methods: {},
-  mounted() {},
-  components: {
-    dataTableServer,
-    datepickerModalVue,
+  data: () => ({
+    dialogFull: false,
+  }),
+  methods: {
+    dialogWidth() {
+      window.innerWidth <= 600
+        ? (this.dialogFull = true)
+        : (this.dialogFull = false);
+    },
   },
+  mounted() {},
 };
 </script>
 <style scoped></style>

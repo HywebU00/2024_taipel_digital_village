@@ -45,47 +45,428 @@
         <!-- 右側選單start -->
         <v-col cols="12" md="8" class="">
           <h3 class="mb-5"><span class="text-primary">簽收作業</span></h3>
-          <v-card class="pa-3 pa-md-6 card">
-            <dataTableServer class="dataTable" />
-          </v-card>
-          <h3 class="my-5 d-flex align-center">
-            <span class="text-primary d-flex align-center">
-              簽收紀錄
-              <v-btn class="ml-3" variant="flat" color="primary">
-                匯出名單
-              </v-btn></span
-            >
-            <div class="ml-auto formGrp">
-              <v-select
-                color="secondary"
-                label="下拉式選單"
-                single-line
-                density="compact"
-                hide-details="auto"
-                :items="['選項ㄧ', '選項二', '選項三']"
-              ></v-select>
-            </div>
-          </h3>
+
           <v-row class="cardGrp">
-            <v-col md="6" sm="6" cols="12" v-for="i in 3" :key="i">
-              <v-card class="itemCard" v-for="i in 1" :key="i">
+            <v-col cols="4">
+              <v-card class="methodCard">
                 <div class="cardContainer">
                   <div class="info">
-                    <v-card-item>
-                      <v-card-title class="mt-3">王０明</v-card-title>
-                    </v-card-item>
                     <v-card-text>
-                      <v-divider class="mb-2"></v-divider>
-                      <ul>
-                        <li><span>戶號</span>EXXXX500</li>
-                        <li><span>身份證</span>FXXXXXX789</li>
-                        <li><span>登記人</span>AXXXXXX789</li>
-                        <li><span>登記時間</span>2024/09/10</li>
-                        <li><span>名單來源</span>系統</li>
-                        <li><span>登記方式</span>台北卡</li>
-                        <li><span>簽收人</span>志工一號</li>
-                        <li><span>備註</span></li>
-                      </ul>
+                      <div class="icon">
+                        <img src="~@/assets/images/method_01.png" alt="" />
+                      </div>
+                      <v-dialog
+                        class="dialogCard methodDialog"
+                        max-width="500"
+                        :fullscreen="dialogFull"
+                        transition="dialog-bottom-transition"
+                      >
+                        <template v-slot:activator="{ props: activatorProps }">
+                          <v-btn
+                            variant="flat"
+                            color="primary"
+                            v-bind="activatorProps"
+                            @click="dialogWidth"
+                          >
+                            讀取身分證
+                          </v-btn>
+                        </template>
+                        <template v-slot:default="{ isActive }">
+                          <v-card title="">
+                            <div class="d-flex justify-end px-4">
+                              <v-btn
+                                class="closeBtn"
+                                variant="text"
+                                icon="mdi-close"
+                                color="secondary"
+                                @click="isActive.value = false"
+                              ></v-btn>
+                            </div>
+                            <v-card-text class="px-4">
+                              <div class="">
+                                <div class="text">
+                                  請出示「身份證」 以進行掃描登記
+                                </div>
+                              </div>
+                            </v-card-text>
+                            <v-card-actions class="d-block">
+                              <div class="d-flex justify-center pa-4 pt-2">
+                                <v-btn
+                                  text="取消"
+                                  class="btn mx-2"
+                                  variant="flat"
+                                  @click="isActive.value = false"
+                                ></v-btn>
+                              </div>
+                            </v-card-actions>
+                          </v-card>
+                        </template>
+                      </v-dialog>
+                    </v-card-text>
+                  </div>
+                </div>
+              </v-card>
+            </v-col>
+            <v-col cols="4">
+              <v-card class="methodCard">
+                <div class="cardContainer">
+                  <div class="info">
+                    <v-card-text class="">
+                      <div class="icon">
+                        <img src="~@/assets/images/method_01.png" alt="" />
+                      </div>
+                      <v-btn variant="flat" color="primary">
+                        重讀取台北通虛擬卡</v-btn
+                      >
+                    </v-card-text>
+                  </div>
+                </div>
+              </v-card>
+            </v-col>
+            <v-col cols="4" class="pcMethod">
+              <v-card class="methodCard">
+                <div class="cardContainer">
+                  <div class="info">
+                    <v-card-text>
+                      <div class="icon">
+                        <img src="~@/assets/images/method_01.png" alt="" />
+                      </div>
+                      <v-btn variant="flat" color="primary">
+                        讀取悠遊卡敬老卡</v-btn
+                      >
+                    </v-card-text>
+                  </div>
+                </div>
+              </v-card>
+            </v-col>
+            <v-col cols="4" class="pcMethod">
+              <v-card class="methodCard">
+                <div class="cardContainer">
+                  <div class="info">
+                    <v-card-text>
+                      <div class="icon">
+                        <img src="~@/assets/images/method_03.png" alt="" />
+                      </div>
+                      <v-btn variant="flat" color="primary">
+                        連線藍牙讀卡機.健保卡</v-btn
+                      >
+                    </v-card-text>
+                  </div>
+                </div>
+              </v-card>
+            </v-col>
+            <v-col cols="4">
+              <v-card class="methodCard">
+                <div class="cardContainer">
+                  <div class="info">
+                    <v-card-text>
+                      <div class="icon">
+                        <img src="~@/assets/images/method_02.png" alt="" />
+                      </div>
+                      <v-dialog
+                        scrollable
+                        class="dialogCard methodDialog"
+                        max-width="500"
+                        :fullscreen="dialogFull"
+                        transition="dialog-bottom-transition"
+                      >
+                        <template v-slot:activator="{ props: activatorProps }">
+                          <v-btn
+                            variant="flat"
+                            color="primary"
+                            v-bind="activatorProps"
+                            @click="dialogWidth"
+                          >
+                            手動新增名單
+                          </v-btn>
+                        </template>
+                        <template v-slot:default="{ isActive }">
+                          <v-card>
+                            <!-- <div class="d-flex justify-end px-4">
+                              <v-btn
+                                class="closeBtn"
+                                variant="text"
+                                icon="mdi-close"
+                                color="secondary"
+                                @click="isActive.value = false"
+                              ></v-btn>
+                            </div> -->
+                            <v-card-text class="px-4">
+                              <div class="">
+                                <v-form>
+                                  <v-container>
+                                    <v-row class="formGrp">
+                                      <v-col class="pb-2" cols="12" lg="">
+                                        <label
+                                          class="text-gray font-weight-bold"
+                                          for=""
+                                          >請輸入身分證字號
+                                        </label>
+                                      </v-col>
+                                      <v-col cols="12" class="pt-0">
+                                        <v-text-field
+                                          label="文字標準表單"
+                                          density="compact"
+                                          single-line
+                                          hide-details="auto"
+                                        ></v-text-field>
+                                      </v-col>
+                                    </v-row>
+                                    <v-row class="formGrp">
+                                      <v-col class="pb-2" cols="12" lg="">
+                                        <label
+                                          class="text-gray font-weight-bold"
+                                          for=""
+                                          >拍照存証
+                                        </label>
+                                      </v-col>
+                                      <v-col cols="12" class="pt-0">
+                                        <div class="">
+                                          <v-row class="photoBlock">
+                                            <v-col cols="6">
+                                              <div class="box">
+                                                <v-btn
+                                                  class="deleteBtn"
+                                                  variant="flat"
+                                                  color="error"
+                                                  icon="mdi-trash-can"
+                                                ></v-btn>
+                                                <v-img
+                                                  class="logo"
+                                                  src="~@/assets/images/logo.png"
+                                                  alt=""
+                                                />
+                                              </div>
+                                            </v-col>
+                                            <v-col cols="6">
+                                              <div class="box"></div>
+                                            </v-col>
+                                          </v-row>
+                                        </div>
+                                      </v-col>
+                                    </v-row>
+                                    <!-- 電子簽名區塊 start -->
+                                    <v-row class="formGrp">
+                                      <v-col class="pb-2" cols="12" lg="">
+                                        <label
+                                          class="text-gray font-weight-bold"
+                                          for=""
+                                        >
+                                          電子簽名</label
+                                        >
+                                      </v-col>
+                                      <v-col cols="12" class="pt-0">
+                                        <div class="signBlock">
+                                          <div class="box">
+                                            <v-dialog
+                                              max-width="500"
+                                              class="fullscreenDialog"
+                                              :fullscreen="dialogFull"
+                                              transition="dialog-bottom-transition"
+                                            >
+                                              <template
+                                                v-slot:activator="{
+                                                  props: activatorProps,
+                                                }"
+                                              >
+                                                <v-btn
+                                                  class="fullBtn"
+                                                  variant="text"
+                                                  v-bind="activatorProps"
+                                                  @click="dialogWidth"
+                                                >
+                                                  <!-- <img
+                                                    src="~@/assets/images/full_icon.png"
+                                                    alt=""
+                                                  /> -->
+                                                </v-btn>
+                                              </template>
+                                              <template
+                                                v-slot:default="{ isActive }"
+                                              >
+                                                <v-card title="">
+                                                  <div
+                                                    class="d-flex justify-end px-4"
+                                                  >
+                                                    <v-btn
+                                                      class="closeBtn"
+                                                      variant="text"
+                                                      icon="mdi-close"
+                                                      color="secondary"
+                                                      @click="
+                                                        isActive.value = false
+                                                      "
+                                                    ></v-btn>
+                                                  </div>
+                                                  <v-card-text class="px-4">
+                                                    <div class="">
+                                                      <div class="text">
+                                                        請出示「身份證」
+                                                        以進行掃描登記
+                                                      </div>
+                                                    </div>
+                                                  </v-card-text>
+                                                  <v-card-actions
+                                                    class="d-block"
+                                                  >
+                                                    <div
+                                                      class="d-flex justify-center pa-4 pt-2"
+                                                    >
+                                                      <v-btn
+                                                        text="刷掉重簽"
+                                                        class="btn mx-2"
+                                                        color="secondary"
+                                                        variant="flat"
+                                                        @click="
+                                                          isActive.value = false
+                                                        "
+                                                      ></v-btn
+                                                      ><v-btn
+                                                        text="完成簽名"
+                                                        class="btn mx-2"
+                                                        variant="flat"
+                                                        @click="
+                                                          isActive.value = false
+                                                        "
+                                                      ></v-btn>
+                                                    </div>
+                                                  </v-card-actions>
+                                                </v-card>
+                                              </template>
+                                            </v-dialog>
+                                          </div>
+                                        </div>
+                                      </v-col>
+                                    </v-row>
+                                    <!-- 電子簽名區塊 end -->
+                                    <!-- 個人同意區塊 start -->
+                                    <v-row class="formGrp">
+                                      <v-col class="pb-2" cols="12" lg="">
+                                        <label
+                                          class="text-gray font-weight-bold"
+                                          for=""
+                                          >個人同意
+                                        </label>
+                                      </v-col>
+                                      <v-col cols="12" class="pt-0">
+                                        <v-switch
+                                          color="primary"
+                                          inset
+                                          @click="model2 = !model2"
+                                          :label="
+                                            model2
+                                              ? `上傳名單當事人備註為同意`
+                                              : `上傳名單當事人備註為不同意`
+                                          "
+                                        ></v-switch>
+                                      </v-col>
+                                    </v-row>
+                                    <!-- 個人同意區塊 end -->
+                                    <!-- <v-row class="formGrp">
+                                      <v-col class="pb-2" cols="12" lg="">
+                                        <label
+                                          class="text-gray font-weight-bold"
+                                          for=""
+                                          >層級
+                                          <abbr
+                                            class="necessary"
+                                            title="為必填(選)欄位,不能為空白。"
+                                            >*</abbr
+                                          ></label
+                                        >
+                                      </v-col>
+                                      <v-col cols="12" class="pt-0">
+                                        <v-select
+                                          label="下拉式選單"
+                                          single-line
+                                          density="compact"
+                                          hide-details="auto"
+                                          :items="[
+                                            '選項ㄧ',
+                                            '選項二',
+                                            '選項三',
+                                          ]"
+                                        ></v-select>
+                                      </v-col>
+                                    </v-row>
+                                    <v-row class="formGrp">
+                                      <v-col class="pb-2" cols="12" lg="">
+                                        <label
+                                          class="text-gray font-weight-bold"
+                                          for=""
+                                          >角色設定
+                                          <abbr
+                                            class="necessary"
+                                            title="為必填(選)欄位,不能為空白。"
+                                            >*</abbr
+                                          ></label
+                                        >
+                                      </v-col>
+                                      <v-col cols="12" class="pt-0">
+                                        <v-select
+                                          label="下拉式選單"
+                                          single-line
+                                          density="compact"
+                                          hide-details="auto"
+                                          :items="[
+                                            '選項ㄧ',
+                                            '選項二',
+                                            '選項三',
+                                          ]"
+                                        ></v-select>
+                                      </v-col>
+                                    </v-row>
+                                    <v-row class="formGrp">
+                                      <v-col class="pb-2" cols="12" lg="">
+                                        <label
+                                          class="text-gray font-weight-bold"
+                                          for=""
+                                          >行政區
+                                          <abbr
+                                            class="necessary"
+                                            title="為必填(選)欄位,不能為空白。"
+                                            >*</abbr
+                                          ></label
+                                        >
+                                      </v-col>
+                                      <v-col cols="12" class="pt-0">
+                                        <v-select
+                                          label="下拉式選單"
+                                          single-line
+                                          density="compact"
+                                          hide-details="auto"
+                                          :items="[
+                                            '選項ㄧ',
+                                            '選項二',
+                                            '選項三',
+                                          ]"
+                                        ></v-select>
+                                      </v-col>
+                                    </v-row> -->
+                                  </v-container>
+                                </v-form>
+                              </div>
+                            </v-card-text>
+                            <v-card-actions class="d-block">
+                              <div class="d-flex justify-center pa-4 pt-2">
+                                <v-btn
+                                  text="取消"
+                                  class="btn mx-2"
+                                  color="secondary"
+                                  variant="flat"
+                                  @click="isActive.value = false"
+                                ></v-btn>
+                                <v-btn
+                                  text="完成簽收"
+                                  class="btn mx-2"
+                                  variant="flat"
+                                  @click="isActive.value = false"
+                                ></v-btn>
+                              </div>
+                            </v-card-actions>
+                          </v-card>
+                        </template>
+                      </v-dialog>
                     </v-card-text>
                   </div>
                 </div>
@@ -100,17 +481,22 @@
 </template>
 
 <script>
-import dataTableServer from "@/components/dataTableServer.vue";
-//載入 Ｖuetify組合 日期選擇器
-import datepickerModalVue from "@/components/datepickerModal.vue";
 export default {
-  data: () => ({}),
-  methods: {},
-  mounted() {},
-  components: {
-    dataTableServer,
-    datepickerModalVue,
+  data: () => ({
+    dialogFull: false,
+    model2: true,
+  }),
+  methods: {
+    dialogWidth() {
+      window.innerWidth <= 600
+        ? (this.dialogFull = true)
+        : (this.dialogFull = false);
+    },
   },
+  mounted() {
+    addEventListener("resize", function () {});
+  },
+  components: {},
 };
 </script>
 <style scoped></style>
