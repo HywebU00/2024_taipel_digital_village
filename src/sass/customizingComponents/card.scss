@@ -202,7 +202,7 @@
   .paymentList {
     .v-list-item {
       min-height: 4rem;
-      border-bottom: 1px solid lighten($gray3, 35%);
+      border-bottom: 1px solid scale-color($gray3, $lightness: 35%); //lighten($gray3, 35%);
     }
   }
   .closeBtn {
@@ -249,7 +249,7 @@
       // background-color: #fff;
     }
     > div {
-      background-color: lighten(#e5e5e3, 6%);
+      background-color: scale-color(#e5e5e3, $lightness: 60%); //lighten(#e5e5e3, 6%);
       min-height: 8rem;
       border-radius: 1rem;
       @include screen('tablet') {
@@ -283,7 +283,7 @@
     .v-field__input {
       mask-image: none;
       border-radius: 1rem;
-      background-color: darken(#f4f4f3, 3%) !important;
+      background-color: scale-color(#f4f4f3, $lightness: -3%) !important; //darken(#f4f4f3, 3%) !important;
     }
   }
   .btnGrp {

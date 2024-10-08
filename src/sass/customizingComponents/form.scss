@@ -45,7 +45,8 @@ input:-internal-autofill-selected {
   .v-input:not(.v-checkbox) {
     border: none;
     .v-field {
-      background: lighten(#e5e5e3, 6%); //#fcfbfb;
+      background: scale-color(#e5e5e3, $lightness: 60%); //lighten(#e5e5e3, 6%);
+
       border-radius: rem(20);
       // .v-field__field {
       //   height: rem(48);

@@ -342,7 +342,7 @@ header {
     margin-left: 0.25rem;
     .v-select {
       .v-field {
-        background-color: darken(#f4f4f3, 3%) !important;
+        background-color: scale-color(#f4f4f3, $lightness: -3%) !important; //darken(#f4f4f3, 3%) !important;
       }
 
       min-width: 150px;
