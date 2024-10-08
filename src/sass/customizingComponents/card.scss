@@ -211,7 +211,6 @@
   .photoBlock {
     > div {
       .box {
-        background-color: #fff;
         border: 1px solid #ccc;
         border-radius: 2.5rem;
         height: 100%;
@@ -220,6 +219,11 @@
         justify-content: center;
         align-items: center;
         position: relative;
+        background: url('@/assets/images/add_bg.png') center center no-repeat;
+        background-color: #fff;
+        img {
+          background-color: #fff;
+        }
       }
       .deleteBtn {
         position: absolute;
@@ -252,6 +256,16 @@
         background-color: #fff;
       }
     }
+  }
+  .idBlock {
+    height: 60vh;
+    border-radius: 1rem;
+    background-color: #e5e5e3;
+  }
+  .text {
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: bold;
   }
 }
 .methodDialog {

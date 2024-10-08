@@ -161,11 +161,11 @@
         <v-btn variant="flat" class="btn">查詢</v-btn>
       </v-col>
       <!-- 搜尋列 end -->
-      <!-- <v-col class="py-0 d-flex align-center" cols="auto">
+      <v-col class="py-0 d-flex align-center" cols="auto">
         <v-btn variant="flat" color="secondary" class="mr-2">
           刪除已選取帳號(0)</v-btn
         >
-      </v-col> -->
+      </v-col>
       <v-col class="py-0 ml-auto btnList" cols="auto">
         <div class="justify-end d-flex flex-wrap">
           <v-btn variant="flat" class="mx-1 my-1"> 下載里長名單範本</v-btn>
@@ -195,18 +195,19 @@
                           </v-col>
                           <v-col cols="12" class="pt-0">
                             <v-select
-                              label="下拉式選單"
+                              placeholder="文字標準表單"
                               single-line
                               density="compact"
                               hide-details="auto"
                               :items="['選項ㄧ', '選項二', '選項三']"
+                              error-messages="錯誤錯誤錯錯誤"
                             ></v-select>
                           </v-col>
                         </v-row>
                         <v-row class="formGrp">
                           <v-col class="pb-2" cols="12" lg="">
                             <label class="text-gray font-weight-bold" for=""
-                              >帳號
+                              >帳號1
                               <abbr
                                 class="necessary"
                                 title="為必填(選)欄位,不能為空白。"
@@ -216,10 +217,11 @@
                           </v-col>
                           <v-col cols="12" class="pt-0">
                             <v-text-field
-                              label="文字標準表單"
+                              placeholder="文字標準表單"
                               density="compact"
                               single-line
-                              hide-details="auto"
+                              details="文字標準表單"
+                              error-messages="錯誤錯誤錯錯誤"
                             ></v-text-field>
                           </v-col>
                         </v-row>
@@ -235,7 +237,7 @@
                           </v-col>
                           <v-col cols="12" class="pt-0">
                             <v-text-field
-                              label="文字標準表單"
+                              placeholder="文字標準表單"
                               density="compact"
                               single-line
                               hide-details="auto"
@@ -255,7 +257,7 @@
                           </v-col>
                           <v-col cols="12" class="pt-0">
                             <v-select
-                              label="下拉式選單"
+                              placeholder="文字標準表單"
                               single-line
                               density="compact"
                               hide-details="auto"
@@ -276,7 +278,7 @@
                           </v-col>
                           <v-col cols="12" class="pt-0">
                             <v-select
-                              label="下拉式選單"
+                              placeholder="文字標準表單"
                               single-line
                               density="compact"
                               hide-details="auto"
@@ -297,7 +299,7 @@
                           </v-col>
                           <v-col cols="12" class="pt-0">
                             <v-select
-                              label="下拉式選單"
+                              placeholder="文字標準表單"
                               single-line
                               density="compact"
                               hide-details="auto"
@@ -338,7 +340,7 @@
                           </v-col>
                           <v-col cols="12" class="pt-0">
                             <v-text-field
-                              label="文字標準表單"
+                              placeholder="文字標準表單"
                               density="compact"
                               single-line
                               hide-details="auto"
@@ -358,7 +360,7 @@
                           </v-col>
                           <v-col cols="12" class="pt-0">
                             <v-select
-                              label="下拉式選單"
+                              placeholder="文字標準表單"
                               single-line
                               density="compact"
                               hide-details="auto"
@@ -406,7 +408,7 @@
                           </v-col>
                           <v-col cols="12" class="pt-0">
                             <v-select
-                              label="下拉式選單"
+                              placeholder="文字標準表單"
                               single-line
                               density="compact"
                               hide-details="auto"
@@ -427,7 +429,7 @@
                           </v-col>
                           <v-col cols="12" class="pt-0">
                             <v-select
-                              label="下拉式選單"
+                              placeholder="文字標準表單"
                               single-line
                               density="compact"
                               hide-details="auto"

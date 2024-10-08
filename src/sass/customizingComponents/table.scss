@@ -47,3 +47,9 @@ table {
     }
   }
 }
+.v-alert {
+  border-radius: 1rem !important;
+  .v-alert__content {
+    font-weight: bold;
+  }
+}

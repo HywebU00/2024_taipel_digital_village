@@ -84,6 +84,7 @@
                             </div>
                             <v-card-text class="px-4">
                               <div class="">
+                                <div class="idBlock"></div>
                                 <div class="text">
                                   請出示「身份證」 以進行掃描登記
                                 </div>
@@ -212,6 +213,7 @@
                                         ></v-text-field>
                                       </v-col>
                                     </v-row>
+                                    <!-- 拍照區塊 start -->
                                     <v-row class="formGrp">
                                       <v-col class="pb-2" cols="12" lg="">
                                         <label
@@ -245,6 +247,7 @@
                                         </div>
                                       </v-col>
                                     </v-row>
+                                    <!-- 拍照區塊 end -->
                                     <!-- 電子簽名區塊 start -->
                                     <v-row class="formGrp">
                                       <v-col class="pb-2" cols="12" lg="">
@@ -275,10 +278,6 @@
                                                   v-bind="activatorProps"
                                                   @click="dialogWidth"
                                                 >
-                                                  <!-- <img
-                                                    src="~@/assets/images/full_icon.png"
-                                                    alt=""
-                                                  /> -->
                                                 </v-btn>
                                               </template>
                                               <template
@@ -362,6 +361,102 @@
                                       </v-col>
                                     </v-row>
                                     <!-- 個人同意區塊 end -->
+                                    <!-- alert start -->
+                                    <v-alert
+                                      icon="mdi-alert-outline"
+                                      text=" 請注意！本筆簽收紀錄因戶政連線逾時，改採用無戶政查核方式完成簽收"
+                                      variant="tonal"
+                                      color="error"
+                                      class="mb-6"
+                                    ></v-alert>
+                                    <!-- alert end -->
+
+                                    <v-row class="formGrp">
+                                      <v-col cols="12" class="text-primary">
+                                        <h3 class="ml-2">驗證成功</h3>
+                                      </v-col>
+                                    </v-row>
+                                    <v-row class="formGrp">
+                                      <v-col class="pb-2" cols="12" lg="">
+                                        <label
+                                          class="text-gray font-weight-bold"
+                                          for=""
+                                          >身分證字號
+                                        </label>
+                                      </v-col>
+                                      <v-col cols="12" class="pt-0">
+                                        <p class="ml-2">A234567890</p>
+                                      </v-col>
+                                    </v-row>
+                                    <v-row class="formGrp">
+                                      <v-col class="pb-2" cols="12" lg="">
+                                        <label
+                                          class="text-gray font-weight-bold"
+                                          for=""
+                                          >姓名
+                                        </label>
+                                      </v-col>
+                                      <v-col cols="12" class="pt-0">
+                                        <p class="ml-2">王O明</p>
+                                      </v-col>
+                                    </v-row>
+                                    <v-row class="formGrp">
+                                      <v-col class="pb-2" cols="12" lg="">
+                                        <label
+                                          class="text-gray font-weight-bold"
+                                          for=""
+                                          >戶號
+                                        </label>
+                                      </v-col>
+                                      <v-col cols="12" class="pt-0">
+                                        <p class="ml-2">EXXXXX500</p>
+                                      </v-col>
+                                    </v-row>
+
+                                    <v-row class="formGrp">
+                                      <v-col class="pb-2" cols="12" lg="">
+                                        <label
+                                          class="text-gray font-weight-bold"
+                                          for=""
+                                          >簽收狀態
+                                        </label>
+                                      </v-col>
+                                      <v-col cols="12" class="pt-0">
+                                        <p
+                                          class="ml-2 text-primary font-weight-bold"
+                                        >
+                                          尚未領取(允許簽收)
+                                        </p>
+                                      </v-col>
+                                    </v-row>
+                                    <v-row class="formGrp">
+                                      <v-col class="pb-2" cols="12" lg="">
+                                        <label
+                                          class="text-gray font-weight-bold"
+                                          for=""
+                                          >簽收狀態
+                                        </label>
+                                      </v-col>
+                                      <v-col cols="12" class="pt-0">
+                                        <p
+                                          class="ml-2 text-error font-weight-bold"
+                                        >
+                                          非里民，不符合領取資格(不允許簽收)
+                                        </p>
+                                      </v-col>
+                                    </v-row>
+                                    <v-row class="formGrp">
+                                      <v-col class="pb-2" cols="12" lg="">
+                                        <label
+                                          class="text-gray font-weight-bold"
+                                          for=""
+                                          >已領取數
+                                        </label>
+                                      </v-col>
+                                      <v-col cols="12" class="pt-0">
+                                        <p class="ml-2">1</p>
+                                      </v-col>
+                                    </v-row>
                                     <!-- <v-row class="formGrp">
                                       <v-col class="pb-2" cols="12" lg="">
                                         <label
