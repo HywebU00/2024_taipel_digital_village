@@ -112,12 +112,12 @@ export default {
         {
           name: "前台_簽收紀錄",
           link: "https://hywebu00.github.io/2024_taipel_digital_village/#/front/card",
-          note: "",
+          note: "【視窗】匯出名單按鈕可點擊  <br> 【視窗】編輯 刪除按鈕可點擊 ",
         },
         {
           name: "前台_簽收作業",
           link: "https://hywebu00.github.io/2024_taipel_digital_village/#/front/method",
-          note: "【視窗】匯出名單按鈕可點擊  <br> 【視窗】編輯 刪除按鈕可點擊 ",
+          note: "",
         },
       ],
     };

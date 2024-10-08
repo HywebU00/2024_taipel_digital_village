@@ -11,6 +11,9 @@
       background: rgb(var(--v-theme-on-surface));
     }
   }
+  > .v-overlay__content {
+    max-width: 600px !important;
+  }
   height: calc(100vh - 80px) !important;
   margin-bottom: 0 !important;
   .v-overlay__scrim {
