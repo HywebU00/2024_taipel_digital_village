@@ -138,7 +138,6 @@ export default {
 <style lang="scss" scope>
 .index_bg {
   background: #e9ecef;
-  height: 100vh;
 }
 .index_container {
   padding-top: 5rem;
