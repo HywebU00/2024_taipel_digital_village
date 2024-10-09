@@ -67,7 +67,7 @@
           <li>Elle Wang</li>
           <li>企劃處</li>
         </ul>
-        <button><span class="material-icons-round"> logout </span></button>
+        <v-btn variant="text" size="small" icon="mdi-logout"></v-btn>
       </div>
     </v-navigation-drawer>
     <v-main>

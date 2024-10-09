@@ -69,12 +69,20 @@ const routes = [
         component: () => import("@/views/front/cardComponent.vue"),
       },
       {
+        path: "/front/event",
+        component: () => import("@/views/front/eventComponent.vue"),
+      },
+      {
         path: "/front/auth",
         component: () => import("@/views/front/authComponent.vue"),
       },
       {
         path: "/front/method",
         component: () => import("@/views/front/methodComponent.vue"),
+      },
+      {
+        path: "/front/form",
+        component: () => import("@/views/front/formComponent.vue"),
       },
     ],
   },

@@ -550,20 +550,12 @@
                     <li><span>經費來源</span>里鄰建設服</li>
                     <li><span>區域</span>內湖區西康里</li>
                     <li><span>已簽收/上線人數</span>32/無</li>
-                    <!-- <li><span>啟用拍照</span>Yes</li>
-                    <li><span>啟用電子簽名</span>32/無</li>
-                    <li><span>審核</span>No</li>
-                    <li><span>發放日期</span>2024/9/10</li> -->
                   </ul>
                 </v-card-text>
                 <v-card-actions class="d-flex justify-center mb-6 btnGrp">
                   <v-btn variant="flat" color="secondary">編輯草稿</v-btn>
 
-                  <v-btn
-                    color="error"
-                    variant="flat"
-                    prepend-icon="mdi-trash-can-outline"
-                  >
+                  <v-btn color="error" variant="flat" class="btnWidth">
                     刪除
                   </v-btn>
                 </v-card-actions>

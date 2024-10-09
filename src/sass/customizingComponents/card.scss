@@ -192,7 +192,7 @@
     }
   }
   .btn {
-    min-width: 120px !important;
+    min-width: 120px;
   }
   .info,
   .infoList {
@@ -208,65 +208,70 @@
   .closeBtn {
     margin-top: -1rem;
   }
-  .photoBlock {
-    > div {
-      .box {
-        border: 1px solid #ccc;
-        border-radius: 2.5rem;
-        height: 100%;
-        aspect-ratio: 1/1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        background: url('@/assets/images/add_bg.png') center center no-repeat;
-        background-color: #fff;
-        img {
-          background-color: #fff;
-        }
-      }
-      .deleteBtn {
-        position: absolute;
-        top: -0.5rem;
-        right: -0.5rem;
-      }
-    }
-  }
-  .signBlock {
-    .box {
-      display: flex;
-      padding: 0.5rem;
-    }
-    .fullBtn {
-      margin-top: 0.5rem;
-      margin-left: auto;
-      margin-right: 0;
-      height: 2rem;
-      min-width: 3rem;
-      width: 2rem;
-      background: url('@/assets/images/full_icon.png') center center no-repeat;
-      background-size: contain;
-      // background-color: #fff;
-    }
-    > div {
-      background-color: scale-color(#e5e5e3, $lightness: 60%); //lighten(#e5e5e3, 6%);
-      min-height: 8rem;
-      border-radius: 1rem;
-      @include screen('tablet') {
-        background-color: #fff;
-      }
-    }
-  }
-  .idBlock {
-    height: 60vh;
-    border-radius: 1rem;
-    background-color: #e5e5e3;
-  }
+
   .text {
     text-align: center;
     margin-top: 1rem;
     font-weight: bold;
   }
+  .signBlock {
+    > div {
+      @include screen('tablet') {
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+.photoBlock {
+  max-width: rem(500);
+  > div {
+    .box {
+      border: 1px solid #ccc;
+      border-radius: 2.5rem;
+      height: 100%;
+      aspect-ratio: 1/1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      background: url('@/assets/images/add_bg.png') center center no-repeat;
+      background-color: #fff;
+      img {
+        background-color: #fff;
+      }
+    }
+    .deleteBtn {
+      position: absolute;
+      top: -0.5rem;
+      right: -0.5rem;
+    }
+  }
+}
+.signBlock {
+  .box {
+    display: flex;
+    padding: 0.5rem;
+  }
+  .fullBtn {
+    margin-top: 0.5rem;
+    margin-left: auto;
+    margin-right: 0;
+    height: 2rem;
+    min-width: 3rem;
+    width: 2rem;
+    background: url('@/assets/images/full_icon.png') center center no-repeat;
+  }
+  > div {
+    background-color: scale-color(#e5e5e3, $lightness: 60%); //lighten(#e5e5e3, 6%);
+    min-height: 8rem;
+    border-radius: 1rem;
+  }
+}
+.idBlock {
+  height: 60vh;
+  border-radius: 1rem;
+  background-color: #e5e5e3;
 }
 .methodDialog {
 }
@@ -295,6 +300,22 @@
   .v-card-title {
     font-weight: bold;
     color: $primary;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .deleteBtn {
+      // &.v-btn--icon.v-btn--density-default {
+      //   height: 26px;
+      // }
+    }
+  }
+  .v-card-item:has(.deleteBtn) {
+    .v-card-title {
+      margin-top: 2.5px !important;
+    }
+    + .v-card-text {
+      margin-top: -10px;
+    }
   }
   .v-card-text {
     ul {
@@ -361,6 +382,9 @@
   }
   .btnGrp {
     flex-wrap: wrap !important;
+    .btnWidth {
+      min-width: rem(100);
+    }
     // @media screen and (max-width: 1400px) {
     //   .v-btn {
     //     width: 45%;

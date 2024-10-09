@@ -119,6 +119,16 @@ export default {
           link: "https://hywebu00.github.io/2024_taipel_digital_village/#/front/method",
           note: "",
         },
+        {
+          name: "前台_報名紀錄",
+          link: "https://hywebu00.github.io/2024_taipel_digital_village/#/front/event",
+          note: "",
+        },
+        {
+          name: "前台_報名作業",
+          link: "https://hywebu00.github.io/2024_taipel_digital_village/#/front/form",
+          note: "",
+        },
       ],
     };
   },

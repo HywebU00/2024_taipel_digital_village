@@ -24,3 +24,7 @@
     background-color: #f4f4f4;
   }
 }
+.v-overlay-scroll-blocked:not(html) {
+  overflow-y: hidden !important;
+  padding-right: 5.6px !important;
+}
