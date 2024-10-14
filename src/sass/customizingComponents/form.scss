@@ -76,13 +76,40 @@ input:-internal-autofill-selected {
       display: none;
     }
   }
+  .v-switch {
+    .v-selection-control {
+      min-height: rem(40);
+    }
+  }
 }
 .v-field__field {
   &:has(input[type='file']) {
     .v-field__input {
       height: 40px;
       padding: 0.25rem 1rem;
-      min-height: auto;
+      min-height: 2.2rem;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
+  }
+}
+.formExpansion {
+  margin-top: 0.5rem;
+  .v-expansion-panel__shadow {
+    box-shadow: none;
+  }
+  .v-expansion-panel-title {
+    padding: 0.5rem;
+    color: $frontPrimary;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .v-expansion-panel-text__wrapper {
+    padding: 0px;
+  }
+  .v-expansion-panel--active > .v-expansion-panel-title:not(.v-expansion-panel-title--static) {
+    min-height: 48px;
   }
 }

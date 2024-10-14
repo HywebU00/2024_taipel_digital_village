@@ -380,24 +380,24 @@
       }
     }
   }
-  .btnGrp {
-    flex-wrap: wrap !important;
-    .btnWidth {
-      min-width: rem(100);
-    }
-    // @media screen and (max-width: 1400px) {
-    //   .v-btn {
-    //     width: 45%;
-
-    //     margin-bottom: 0.5rem;
-    //   }
-    // }
-    // @include screen('notebook') {
-    //   .v-btn {
-    //     width: auto;
-    //   }
-    // }
+}
+.btnGrp {
+  flex-wrap: wrap !important;
+  .btnWidth {
+    min-width: rem(100);
   }
+  // @media screen and (max-width: 1400px) {
+  //   .v-btn {
+  //     width: 45%;
+
+  //     margin-bottom: 0.5rem;
+  //   }
+  // }
+  // @include screen('notebook') {
+  //   .v-btn {
+  //     width: auto;
+  //   }
+  // }
 }
 .logCard {
   @extend .itemCard;
@@ -526,9 +526,11 @@
     > div {
       display: flex;
       align-items: center;
+      justify-content: center;
       .icon {
         text-align: center;
-        width: rem(120);
+        width: rem(80);
+        margin-right: 1rem;
       }
       .v-btn {
         width: calc(100% - 120px);

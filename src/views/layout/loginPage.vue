@@ -18,7 +18,6 @@
             src="~@/assets/images/logo_text.png"
           ></v-img>
         </div>
-
         <v-form>
           <v-text-field
             density="compact"

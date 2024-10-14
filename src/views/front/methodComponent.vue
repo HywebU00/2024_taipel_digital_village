@@ -53,7 +53,7 @@
                   <div class="info">
                     <v-card-text>
                       <div class="icon">
-                        <img src="~@/assets/images/method_01.png" alt="" />
+                        <img src="~@/assets/images/idcard.svg" alt="" />
                       </div>
                       <v-dialog
                         class="dialogCard methodDialog"
@@ -112,13 +112,59 @@
               <v-card class="methodCard">
                 <div class="cardContainer">
                   <div class="info">
-                    <v-card-text class="">
+                    <v-card-text>
                       <div class="icon">
-                        <img src="~@/assets/images/method_01.png" alt="" />
+                        <img src="~@/assets/images/EasyCard.svg" alt="" />
                       </div>
-                      <v-btn variant="flat" color="primary">
-                        重讀取台北通虛擬卡</v-btn
+
+                      <v-dialog
+                        class="dialogCard methodDialog"
+                        max-width="500"
+                        :fullscreen="dialogFull"
+                        transition="dialog-bottom-transition"
                       >
+                        <template v-slot:activator="{ props: activatorProps }">
+                          <v-btn
+                            variant="flat"
+                            color="primary"
+                            v-bind="activatorProps"
+                            @click="dialogWidth"
+                          >
+                            讀取悠遊卡敬老卡
+                          </v-btn>
+                        </template>
+                        <template v-slot:default="{ isActive }">
+                          <v-card title="">
+                            <div class="d-flex justify-end px-4">
+                              <v-btn
+                                class="closeBtn"
+                                variant="text"
+                                icon="mdi-close"
+                                color="secondary"
+                                @click="isActive.value = false"
+                              ></v-btn>
+                            </div>
+                            <v-card-text class="px-4">
+                              <div class="">
+                                <div class="idBlock"></div>
+                                <div class="text">
+                                  請出示「敬老卡」 以進行掃描登記
+                                </div>
+                              </div>
+                            </v-card-text>
+                            <v-card-actions class="d-block">
+                              <div class="d-flex justify-center pa-4 pt-2">
+                                <v-btn
+                                  text="取消"
+                                  class="btn mx-2"
+                                  variant="flat"
+                                  @click="isActive.value = false"
+                                ></v-btn>
+                              </div>
+                            </v-card-actions>
+                          </v-card>
+                        </template>
+                      </v-dialog>
                     </v-card-text>
                   </div>
                 </div>
@@ -132,9 +178,54 @@
                       <div class="icon">
                         <img src="~@/assets/images/method_01.png" alt="" />
                       </div>
-                      <v-btn variant="flat" color="primary">
-                        讀取悠遊卡敬老卡</v-btn
+                      <v-dialog
+                        class="dialogCard methodDialog"
+                        max-width="500"
+                        :fullscreen="dialogFull"
+                        transition="dialog-bottom-transition"
                       >
+                        <template v-slot:activator="{ props: activatorProps }">
+                          <v-btn
+                            variant="flat"
+                            color="primary"
+                            v-bind="activatorProps"
+                            @click="dialogWidth"
+                          >
+                            讀取悠遊卡敬老卡
+                          </v-btn>
+                        </template>
+                        <template v-slot:default="{ isActive }">
+                          <v-card title="">
+                            <div class="d-flex justify-end px-4">
+                              <v-btn
+                                class="closeBtn"
+                                variant="text"
+                                icon="mdi-close"
+                                color="secondary"
+                                @click="isActive.value = false"
+                              ></v-btn>
+                            </div>
+                            <v-card-text class="px-4">
+                              <div class="">
+                                <div class="idBlock"></div>
+                                <div class="text">
+                                  請出示「敬老卡」 以進行掃描登記
+                                </div>
+                              </div>
+                            </v-card-text>
+                            <v-card-actions class="d-block">
+                              <div class="d-flex justify-center pa-4 pt-2">
+                                <v-btn
+                                  text="取消"
+                                  class="btn mx-2"
+                                  variant="flat"
+                                  @click="isActive.value = false"
+                                ></v-btn>
+                              </div>
+                            </v-card-actions>
+                          </v-card>
+                        </template>
+                      </v-dialog>
                     </v-card-text>
                   </div>
                 </div>
@@ -183,15 +274,6 @@
                         </template>
                         <template v-slot:default="{ isActive }">
                           <v-card>
-                            <!-- <div class="d-flex justify-end px-4">
-                              <v-btn
-                                class="closeBtn"
-                                variant="text"
-                                icon="mdi-close"
-                                color="secondary"
-                                @click="isActive.value = false"
-                              ></v-btn>
-                            </div> -->
                             <v-card-text class="px-4">
                               <div class="">
                                 <v-form>

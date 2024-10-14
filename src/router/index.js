@@ -57,6 +57,10 @@ const routes = [
     component: () => import("@/views/layout/loginPage.vue"),
   },
   {
+    path: "/mplogin",
+    component: () => import("@/views/layout/mpLoginPage.vue"),
+  },
+  {
     path: "/front",
     component: () => import("@/views/layout/frontLayout.vue"),
     children: [

@@ -117,7 +117,7 @@ export default {
         {
           name: "前台_簽收作業",
           link: "https://hywebu00.github.io/2024_taipel_digital_village/#/front/method",
-          note: "",
+          note: "【視窗】讀取身分證按鈕可點擊  <br> 【視窗】編輯 讀取台北通按鈕可點擊 <br> 【視窗】編輯 讀取敬老卡按鈕可點擊 <br> 【視窗】編輯 讀取健保卡按鈕可點擊 <br> 【視窗】編輯 新增手動名單按鈕可點擊 ",
         },
         {
           name: "前台_報名紀錄",
@@ -127,6 +127,11 @@ export default {
         {
           name: "前台_報名作業",
           link: "https://hywebu00.github.io/2024_taipel_digital_village/#/front/form",
+          note: "【視窗】讀取身分證按鈕可點擊  <br> 【視窗】編輯 讀取台北通按鈕可點擊 <br> 【視窗】編輯 讀取敬老卡按鈕可點擊 <br> 【視窗】編輯 讀取健保卡按鈕可點擊 <br> 【視窗】編輯 新增手動名單按鈕可點擊 ",
+        },
+        {
+          name: "前台_登入頁",
+          link: "https://hywebu00.github.io/2024_taipel_digital_village/#/frontlogin",
           note: "",
         },
       ],

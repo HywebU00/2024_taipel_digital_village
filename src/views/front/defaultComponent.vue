@@ -4,7 +4,7 @@
 
     <h2>活動管理</h2>
     <!-- 篩選器 start -->
-    <v-row class="formGrp filterList">
+    <v-row class="formGrp filterList d-none d-sm-flex">
       <v-col cols="6" sm="4" md="4" lg="2" class="pt-0">
         <v-select
           label="全部行政區"
@@ -63,7 +63,10 @@
     <!-- 按鈕列 start -->
     <v-row>
       <!-- 搜尋列 start -->
-      <v-col cols="auto" class="py-0 d-flex align-center formGrp searchList">
+      <v-col
+        cols="auto"
+        class="py-0 d-none d-sm-flex align-center formGrp searchList"
+      >
         <v-text-field
           label="標題"
           density="compact"
@@ -211,6 +214,152 @@
                             <p class="px-2">大安區- 光信里</p>
                           </v-col>
                         </v-row>
+                        <v-expansion-panels class="formExpansion">
+                          <v-expansion-panel>
+                            <v-expansion-panel-title elevation-0
+                              >進階選項</v-expansion-panel-title
+                            >
+                            <v-expansion-panel-text>
+                              <v-row class="formGrp">
+                                <v-col class="pb-2" cols="12" lg="">
+                                  <label
+                                    class="text-gray font-weight-bold"
+                                    for=""
+                                    >名額限制
+                                    <abbr
+                                      class="necessary"
+                                      title="為必填(選)欄位,不能為空白。"
+                                      >*</abbr
+                                    ></label
+                                  >
+                                </v-col>
+                                <v-col cols="12" class="pt-0">
+                                  <v-text-field
+                                    label="文字標準表單"
+                                    density="compact"
+                                    single-line
+                                    hide-details="auto"
+                                  ></v-text-field>
+                                </v-col>
+                              </v-row>
+                              <v-row class="formGrp">
+                                <v-col class="pb-2" cols="12" lg="">
+                                  <label
+                                    class="text-gray font-weight-bold"
+                                    for=""
+                                    >一般民眾年齡限制
+                                  </label>
+                                </v-col>
+                                <v-col cols="12" class="pt-0">
+                                  <v-row>
+                                    <v-col>
+                                      <v-select
+                                        label="最小年齡"
+                                        single-line
+                                        density="compact"
+                                        hide-details="auto"
+                                        :items="['選項ㄧ', '選項二', '選項三']"
+                                      ></v-select>
+                                    </v-col>
+                                    <v-col>
+                                      <v-select
+                                        label="最大年齡"
+                                        single-line
+                                        density="compact"
+                                        hide-details="auto"
+                                        :items="['選項ㄧ', '選項二', '選項三']"
+                                      ></v-select>
+                                    </v-col>
+                                  </v-row>
+                                </v-col>
+                              </v-row>
+                              <v-row class="formGrp">
+                                <v-col class="pb-2" cols="12" lg="">
+                                  <label
+                                    class="text-gray font-weight-bold"
+                                    for=""
+                                    >原住民年齡限制
+                                  </label>
+                                </v-col>
+                                <v-col cols="12" class="pt-0">
+                                  <v-row>
+                                    <v-col>
+                                      <v-select
+                                        label="最小年齡"
+                                        single-line
+                                        density="compact"
+                                        hide-details="auto"
+                                        :items="['選項ㄧ', '選項二', '選項三']"
+                                      ></v-select>
+                                    </v-col>
+                                    <v-col>
+                                      <v-select
+                                        label="最大年齡"
+                                        single-line
+                                        density="compact"
+                                        hide-details="auto"
+                                        :items="['選項ㄧ', '選項二', '選項三']"
+                                      ></v-select>
+                                    </v-col>
+                                  </v-row>
+                                </v-col>
+                              </v-row>
+                              <v-row class="formGrp">
+                                <v-col class="pb-2" cols="12" lg="">
+                                  <label
+                                    class="text-gray font-weight-bold"
+                                    for=""
+                                    >性別限制
+                                  </label>
+                                </v-col>
+                                <v-col cols="12" class="pt-0">
+                                  <v-select
+                                    label="性別"
+                                    single-line
+                                    density="compact"
+                                    hide-details="auto"
+                                    :items="['選項ㄧ', '選項二', '選項三']"
+                                  ></v-select>
+                                </v-col>
+                              </v-row>
+                              <v-row class="formGrp">
+                                <v-col class="pb-2" cols="12" lg="">
+                                  <label
+                                    class="text-gray font-weight-bold"
+                                    for=""
+                                    >啟用拍照
+                                  </label>
+                                </v-col>
+                                <v-col cols="12" class="pt-0">
+                                  <v-switch
+                                    class="ml-2"
+                                    color="primary"
+                                    inset
+                                    hide-details="auto"
+                                    single-line
+                                  ></v-switch>
+                                </v-col>
+                              </v-row>
+                              <v-row class="formGrp">
+                                <v-col class="pb-2" cols="12" lg="">
+                                  <label
+                                    class="text-gray font-weight-bold"
+                                    for=""
+                                    >啟用電子簽名
+                                  </label>
+                                </v-col>
+                                <v-col cols="12" class="pt-0">
+                                  <v-switch
+                                    class="ml-2"
+                                    color="primary"
+                                    hide-details="auto"
+                                    inset
+                                  ></v-switch>
+                                </v-col>
+                              </v-row>
+                            </v-expansion-panel-text>
+                          </v-expansion-panel>
+                        </v-expansion-panels>
                       </v-container>
                     </v-form>
                   </div>
@@ -224,7 +373,13 @@
                       @click="isActive.value = false"
                     ></v-btn>
                     <v-btn
-                      text="確認新增"
+                      text="確認送審"
+                      class="btn mx-2"
+                      variant="flat"
+                      @click="isActive.value = false"
+                    ></v-btn>
+                    <v-btn
+                      text="暫存草稿"
                       class="btn mx-2"
                       variant="flat"
                       @click="isActive.value = false"
@@ -363,6 +518,167 @@
                             ></v-select>
                           </v-col>
                         </v-row>
+                        <v-row class="formGrp">
+                          <v-col class="pb-2" cols="12" lg="">
+                            <label class="text-gray font-weight-bold" for=""
+                              >發放區域
+                              <abbr
+                                class="necessary"
+                                title="為必填(選)欄位,不能為空白。"
+                                >*</abbr
+                              ></label
+                            >
+                          </v-col>
+                          <v-col cols="12" class="pt-0">
+                            <p class="px-2">大安區- 光信里</p>
+                          </v-col>
+                        </v-row>
+                        <v-expansion-panels class="formExpansion">
+                          <v-expansion-panel>
+                            <v-expansion-panel-title elevation-0
+                              >進階選項</v-expansion-panel-title
+                            >
+                            <v-expansion-panel-text>
+                              <v-row class="formGrp">
+                                <v-col class="pb-2" cols="12" lg="">
+                                  <label
+                                    class="text-gray font-weight-bold"
+                                    for=""
+                                    >名額限制
+                                    <abbr
+                                      class="necessary"
+                                      title="為必填(選)欄位,不能為空白。"
+                                      >*</abbr
+                                    ></label
+                                  >
+                                </v-col>
+                                <v-col cols="12" class="pt-0">
+                                  <v-text-field
+                                    label="文字標準表單"
+                                    density="compact"
+                                    single-line
+                                    hide-details="auto"
+                                  ></v-text-field>
+                                </v-col>
+                              </v-row>
+                              <v-row class="formGrp">
+                                <v-col class="pb-2" cols="12" lg="">
+                                  <label
+                                    class="text-gray font-weight-bold"
+                                    for=""
+                                    >一般民眾年齡限制
+                                  </label>
+                                </v-col>
+                                <v-col cols="12" class="pt-0">
+                                  <v-row>
+                                    <v-col>
+                                      <v-select
+                                        label="最小年齡"
+                                        single-line
+                                        density="compact"
+                                        hide-details="auto"
+                                        :items="['選項ㄧ', '選項二', '選項三']"
+                                      ></v-select>
+                                    </v-col>
+                                    <v-col>
+                                      <v-select
+                                        label="最大年齡"
+                                        single-line
+                                        density="compact"
+                                        hide-details="auto"
+                                        :items="['選項ㄧ', '選項二', '選項三']"
+                                      ></v-select>
+                                    </v-col>
+                                  </v-row>
+                                </v-col>
+                              </v-row>
+                              <v-row class="formGrp">
+                                <v-col class="pb-2" cols="12" lg="">
+                                  <label
+                                    class="text-gray font-weight-bold"
+                                    for=""
+                                    >原住民年齡限制
+                                  </label>
+                                </v-col>
+                                <v-col cols="12" class="pt-0">
+                                  <v-row>
+                                    <v-col>
+                                      <v-select
+                                        label="最小年齡"
+                                        single-line
+                                        density="compact"
+                                        hide-details="auto"
+                                        :items="['選項ㄧ', '選項二', '選項三']"
+                                      ></v-select>
+                                    </v-col>
+                                    <v-col>
+                                      <v-select
+                                        label="最大年齡"
+                                        single-line
+                                        density="compact"
+                                        hide-details="auto"
+                                        :items="['選項ㄧ', '選項二', '選項三']"
+                                      ></v-select>
+                                    </v-col>
+                                  </v-row>
+                                </v-col>
+                              </v-row>
+                              <v-row class="formGrp">
+                                <v-col class="pb-2" cols="12" lg="">
+                                  <label
+                                    class="text-gray font-weight-bold"
+                                    for=""
+                                    >性別限制
+                                  </label>
+                                </v-col>
+                                <v-col cols="12" class="pt-0">
+                                  <v-select
+                                    label="性別"
+                                    single-line
+                                    density="compact"
+                                    hide-details="auto"
+                                    :items="['選項ㄧ', '選項二', '選項三']"
+                                  ></v-select>
+                                </v-col>
+                              </v-row>
+                              <v-row class="formGrp">
+                                <v-col class="pb-2" cols="12" lg="">
+                                  <label
+                                    class="text-gray font-weight-bold"
+                                    for=""
+                                    >啟用拍照
+                                  </label>
+                                </v-col>
+                                <v-col cols="12" class="pt-0">
+                                  <v-switch
+                                    class="ml-2"
+                                    color="primary"
+                                    inset
+                                    hide-details="auto"
+                                    single-line
+                                  ></v-switch>
+                                </v-col>
+                              </v-row>
+                              <v-row class="formGrp">
+                                <v-col class="pb-2" cols="12" lg="">
+                                  <label
+                                    class="text-gray font-weight-bold"
+                                    for=""
+                                    >啟用電子簽名
+                                  </label>
+                                </v-col>
+                                <v-col cols="12" class="pt-0">
+                                  <v-switch
+                                    class="ml-2"
+                                    color="primary"
+                                    hide-details="auto"
+                                    inset
+                                  ></v-switch>
+                                </v-col>
+                              </v-row>
+                            </v-expansion-panel-text>
+                          </v-expansion-panel>
+                        </v-expansion-panels>
                       </v-container>
                     </v-form>
                   </div>
@@ -376,7 +692,13 @@
                       @click="isActive.value = false"
                     ></v-btn>
                     <v-btn
-                      text="確認新增"
+                      text="確認送審"
+                      class="btn mx-2"
+                      variant="flat"
+                      @click="isActive.value = false"
+                    ></v-btn>
+                    <v-btn
+                      text="暫存草稿"
                       class="btn mx-2"
                       variant="flat"
                       @click="isActive.value = false"
