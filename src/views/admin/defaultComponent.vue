@@ -6,6 +6,64 @@
     <!-- 篩選器 start -->
     <v-form class="mb-3">
       <v-row class="formGrp filterList">
+        <v-col cols="6" lg="6" class="pt-0">
+          <v-select
+            label="全部行政區"
+            single-line
+            density="compact"
+            hide-details="auto"
+            :items="['選項ㄧ', '選項二', '選項三']"
+          ></v-select>
+        </v-col>
+        <v-col cols="6" lg="6" class="pt-0">
+          <v-select
+            label="全部村里"
+            single-line
+            density="compact"
+            hide-details="auto"
+            :items="['選項ㄧ', '選項二', '選項三']"
+          ></v-select>
+        </v-col>
+        <v-col cols="6" lg="6" class="pt-0">
+          <v-select
+            label="全部行政區"
+            single-line
+            density="compact"
+            hide-details="auto"
+            :items="['選項ㄧ', '選項二', '選項三']"
+          ></v-select>
+        </v-col>
+        <v-col cols="6" lg="6" class="pt-0">
+          <v-select
+            label="全部村里"
+            single-line
+            density="compact"
+            hide-details="auto"
+            :items="['選項ㄧ', '選項二', '選項三']"
+          ></v-select>
+        </v-col>
+        <v-col cols="6" lg="6" class="pt-0">
+          <v-select
+            label="全部行政區"
+            single-line
+            density="compact"
+            hide-details="auto"
+            :items="['選項ㄧ', '選項二', '選項三']"
+          ></v-select>
+        </v-col>
+        <v-col cols="6" lg="6" class="pt-0">
+          <v-select
+            label="全部村里"
+            single-line
+            density="compact"
+            hide-details="auto"
+            :items="['選項ㄧ', '選項二', '選項三']"
+          ></v-select>
+        </v-col>
+      </v-row>
+
+      <!-- 測試測試測試 -->
+      <v-row class="formGrp filterList">
         <v-col cols="6" sm="4" md="4" lg="2" class="pt-0">
           <v-select
             label="全部行政區"
@@ -139,8 +197,8 @@
             ></v-select>
           </div>
         </v-col>
-        <v-col cols="12" sm="12" md="12" lg="4" class="pt-0 pr-3">
-          <div class="d-flex align-center">
+        <v-col cols="12" sm="12" md="12" lg="4" class="pt-0">
+          <div class="d-flex align-center mr-2">
             <label class="px-2 mb-0" for="">From</label>
             <datepickerModalVue> </datepickerModalVue>
             <label class="px-2 mb-0" for="">To</label>
