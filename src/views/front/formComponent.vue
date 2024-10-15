@@ -47,7 +47,6 @@
         <!-- 右側選單start -->
         <v-col cols="12" md="8" class="">
           <h3 class="mb-5"><span class="text-primary">戶政資料查核</span></h3>
-
           <v-row class="cardGrp">
             <v-col cols="4">
               <v-card class="methodCard">
@@ -177,7 +176,7 @@
                   <div class="info">
                     <v-card-text>
                       <div class="icon">
-                        <img src="~@/assets/images/EasyCard.svg" alt="" />
+                        <img src="~@/assets/images/yoyocard.svg" alt="" />
                       </div>
 
                       <v-dialog
@@ -241,9 +240,67 @@
                       <div class="icon">
                         <img src="~@/assets/images/Bluetooth.svg" alt="" />
                       </div>
-                      <v-btn variant="flat" color="primary">
-                        連線藍牙讀卡機.健保卡</v-btn
+                      <v-dialog
+                        class="dialogCard methodDialog"
+                        max-width="500"
+                        :fullscreen="dialogFull"
+                        transition="dialog-bottom-transition"
                       >
+                        <template v-slot:activator="{ props: activatorProps }">
+                          <v-btn
+                            variant="flat"
+                            color="primary"
+                            v-bind="activatorProps"
+                            @click="dialogWidth"
+                          >
+                            連線藍芽讀卡機.健保卡
+                          </v-btn>
+                        </template>
+                        <template v-slot:default="{ isActive }">
+                          <v-card title="">
+                            <div class="d-flex justify-end px-4">
+                              <v-btn
+                                class="closeBtn"
+                                variant="text"
+                                icon="mdi-close"
+                                color="secondary"
+                                @click="isActive.value = false"
+                              ></v-btn>
+                            </div>
+                            <v-card-text class="px-4">
+                              <div class="">
+                                <div class="idBlock">
+                                  <img
+                                    class="bluetoothImg"
+                                    src="~@/assets/images/blue_.png"
+                                    alt=""
+                                  />
+                                </div>
+                                <div class="text">
+                                  請連線藍芽機，並插入健保卡
+                                </div>
+                              </div>
+                            </v-card-text>
+                            <v-card-actions class="d-block">
+                              <div class="d-flex justify-center pa-4 pt-2">
+                                <v-btn
+                                  text="讀取卡片"
+                                  class="btn mx-2"
+                                  variant="flat"
+                                  @click="isActive.value = false"
+                                ></v-btn>
+                                <v-btn
+                                  text="取消"
+                                  class="btn mx-2"
+                                  color="secondary"
+                                  variant="flat"
+                                  @click="isActive.value = false"
+                                ></v-btn>
+                              </div>
+                            </v-card-actions>
+                          </v-card>
+                        </template>
+                      </v-dialog>
                     </v-card-text>
                   </div>
                 </div>
@@ -276,15 +333,6 @@
                         </template>
                         <template v-slot:default="{ isActive }">
                           <v-card>
-                            <!-- <div class="d-flex justify-end px-4">
-                              <v-btn
-                                class="closeBtn"
-                                variant="text"
-                                icon="mdi-close"
-                                color="secondary"
-                                @click="isActive.value = false"
-                              ></v-btn>
-                            </div> -->
                             <v-card-text class="px-4">
                               <div class="">
                                 <v-form>
@@ -356,7 +404,7 @@
                                           <div class="box">
                                             <v-dialog
                                               max-width="500"
-                                              class="fullscreenDialog"
+                                              class="fullscreenDialog signDialog"
                                               :fullscreen="dialogFull"
                                               transition="dialog-bottom-transition"
                                             >
@@ -392,10 +440,7 @@
                                                   </div>
                                                   <v-card-text class="px-4">
                                                     <div class="">
-                                                      <div class="text">
-                                                        請出示「身份證」
-                                                        以進行掃描登記
-                                                      </div>
+                                                      <div class="text"></div>
                                                     </div>
                                                   </v-card-text>
                                                   <v-card-actions
@@ -782,7 +827,7 @@
                           <div class="box">
                             <v-dialog
                               max-width="500"
-                              class="fullscreenDialog"
+                              class="fullscreenDialog signDialog"
                               :fullscreen="dialogFull"
                               transition="dialog-bottom-transition"
                             >
@@ -810,9 +855,7 @@
                                   </div>
                                   <v-card-text class="px-4">
                                     <div class="">
-                                      <div class="text">
-                                        請出示「身份證」 以進行掃描登記
-                                      </div>
+                                      <div class="text"></div>
                                     </div>
                                   </v-card-text>
                                   <v-card-actions class="d-block">
@@ -874,9 +917,7 @@ export default {
         : (this.dialogFull = false);
     },
   },
-  mounted() {
-    addEventListener("resize", function () {});
-  },
+  mounted() {},
   components: {
     datepickerModalVue,
   },

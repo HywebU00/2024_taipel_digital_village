@@ -270,9 +270,18 @@
 }
 .idBlock {
   height: 60vh;
+  max-height: rem(450);
   border-radius: 1rem;
   background-color: #e5e5e3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .bluetoothImg {
+    width: rem(280);
+    height: rem(300);
+  }
 }
+
 .methodDialog {
 }
 .v-card {
@@ -413,6 +422,16 @@
         }
         width: 100%;
       }
+    }
+  }
+}
+.signDialog {
+  @include screen('mobile') {
+    .v-overlay__content {
+      max-width: unset !important;
+    }
+    .v-card {
+      // height: calc(100vh - 48px);
     }
   }
 }
