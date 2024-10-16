@@ -37,6 +37,7 @@
     }
     .mpImg {
       margin: 0 0rem 0 10rem;
+      width: rem(600);
     }
     @include screen('desktop') {
       .v-sheet {
@@ -53,6 +54,7 @@
       }
       .mpImg {
         margin: 0 2rem;
+        width: rem(500);
       }
       .title {
         margin-top: 3rem;
@@ -90,7 +92,7 @@
         margin: 0;
       }
       .mpImg {
-        max-width: 300px !important;
+        max-width: 300px;
       }
     }
   }

@@ -131,7 +131,7 @@ export default {
         },
         {
           name: "前台_登入頁",
-          link: "https://hywebu00.github.io/2024_taipel_digital_village/#/frontlogin",
+          link: "https://hywebu00.github.io/2024_taipel_digital_village/#/mplogin",
           note: "",
         },
       ],

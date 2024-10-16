@@ -26,7 +26,6 @@
         </div>
         <div class="">
           <v-img
-            width="500"
             aspect-ratio="1/1"
             class="mpImg"
             cover
