@@ -205,8 +205,6 @@
             v-bind="activatorProps"
             icon="mdi-trash-can-outline"
           ></v-btn>
-          <v-checkbox></v-checkbox>
-          <v-checkbox disabled></v-checkbox>
         </template>
         <template v-slot:default="{ isActive }">
           <v-card class="pt-6" title="">
