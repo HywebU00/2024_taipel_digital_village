@@ -24,6 +24,26 @@
             :items="['選項ㄧ', '選項二', '選項三']"
           ></v-select>
         </v-col>
+      </v-row>
+      <v-row class="formGrp filterList">
+        <v-col cols="6" lg="6" class="pt-0">
+          <v-select
+            label="全部行政區"
+            single-line
+            density="compact"
+            hide-details="auto"
+            :items="['選項ㄧ', '選項二', '選項三']"
+          ></v-select>
+        </v-col>
+        <v-col cols="6" lg="6" class="pt-0">
+          <v-select
+            label="全部村里"
+            single-line
+            density="compact"
+            hide-details="auto"
+            :items="['選項ㄧ', '選項二', '選項三']"
+          ></v-select>
+        </v-col>
         <v-col cols="6" lg="6" class="pt-0">
           <v-select
             label="全部行政區"
@@ -196,7 +216,7 @@
           </div>
         </v-col>
         <v-col cols="12" sm="12" md="12" lg="4" class="pt-0">
-          <div class="d-flex align-center mr-2">
+          <div class="d-flex align-center mr-2 mr-sm-0">
             <label class="px-2 mb-0" for="">From</label>
             <datepickerModalVue> </datepickerModalVue>
             <label class="px-2 mb-0" for="">To</label>

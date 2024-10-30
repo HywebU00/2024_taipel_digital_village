@@ -66,7 +66,7 @@
               prepend-icon="mdi-account-cog"
               v-bind="props"
               append-icon=""
-              title="帳號管理"
+              title="戶政系統查詢記錄-個人查詢"
               @click="pushLink('/')"
             >
             </v-list-item>

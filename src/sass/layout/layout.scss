@@ -70,7 +70,7 @@
       flex-grow: 1;
       overflow-y: scroll;
       padding-inline: 4px;
-       &::-webkit-scrollbar-track {
+      &::-webkit-scrollbar-track {
         background-color: #f5f5f500;
       }
 
@@ -96,6 +96,8 @@
       height: rem(44);
       .v-list-item-title {
         font-weight: bold;
+        white-space: break-spaces;
+        line-height: 1em;
       }
       + .v-list-group__items {
         .v-list-item {
@@ -373,6 +375,7 @@ header {
       }
       &:nth-child(even of .v-col-6.v-col-lg-6) {
         padding-right: 0.75rem;
+        padding-left: 0.5rem;
       }
     }
 
