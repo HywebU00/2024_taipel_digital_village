@@ -119,6 +119,7 @@
         </template>
       </v-dialog>
     </template>
+
     <template v-slot:item.edit="{ item }">
       <v-dialog class="dialogCard" max-width="600" scrollable>
         <template v-slot:activator="{ props: activatorProps }">
@@ -250,6 +251,7 @@ const desserts = [
     status: "待審核",
     num: 65,
     note: "",
+    selectable: false,
   },
   {
     id: "002",
@@ -357,7 +359,12 @@ export default {
         sortable: false,
         width: "8%",
       },
-      { title: "登記人數", key: "num", align: "end", sortable: false },
+      {
+        title: "登記人數",
+        key: "num",
+        align: "end",
+        sortable: false,
+      },
       { title: "匯出名單", key: "export", align: "start", sortable: false },
       { title: "編輯", key: "edit", align: "center", sortable: false },
       { title: "刪除", key: "delete", align: "start", sortable: false },

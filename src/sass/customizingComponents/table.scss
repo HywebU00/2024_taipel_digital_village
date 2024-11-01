@@ -58,4 +58,7 @@ table {
   .v-input--disabled {
     color: #a4a4a4;
   }
+  .v-selection-control--disabled {
+    opacity: 0.2;
+  }
 }

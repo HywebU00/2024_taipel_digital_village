@@ -27,14 +27,9 @@
     width: 208px;
     height: 25px;
     content: '';
+    z-index: -1;
     opacity: 0.6;
     background: url('@/assets/images/shadow.png') no-repeat;
     background-size: contain;
   }
-  // > .v-list-group__items > .v-list-item {
-  //   .v-list-item-title {
-  //     font-weight: bolder;
-  //     margin-left: 2rem;
-  //   }
-  // }
 }
