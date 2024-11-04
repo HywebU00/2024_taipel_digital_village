@@ -151,6 +151,79 @@
               </v-card>
             </v-col>
           </v-row>
+          <v-row>
+            <v-col>
+              <v-dialog class="dialogCard" max-width="500" scrollable>
+                <template v-slot:activator="{ props: activatorProps }">
+                  <v-btn
+                    variant="flat"
+                    class="mx-1 my-1"
+                    color="secondary"
+                    v-bind="activatorProps"
+                    >審核備註 按鈕</v-btn
+                  >
+                </template>
+                <template v-slot:default="{ isActive }">
+                  <v-card title="活動辦法">
+                    <v-card-text class="px-4">
+                      <div class="mx-3">
+                        <v-sheet color="transparent" class="commentCard">
+                          <h3 class="text-primary mb-5">
+                            <span class="text-primary"> 審核備註</span>
+                          </h3>
+                          <div class="formGrp">
+                            <v-textarea
+                              hide-details="auto"
+                              variant="outlined"
+                            ></v-textarea>
+                          </div>
+                          <div class="justify-center d-flex mt-3 btnGrp">
+                            <v-btn
+                              variant="flat"
+                              class="ma-1"
+                              color="secondary"
+                            >
+                              審核不通過
+                            </v-btn>
+                            <v-btn variant="flat" class="ma-1" color="primary">
+                              審核通過
+                            </v-btn>
+                          </div>
+                        </v-sheet>
+                        <v-card class="itemCard" v-for="i in 3" :key="i">
+                          <div class="cardContainer">
+                            <div class="info">
+                              <v-card-item>
+                                <v-card-title
+                                  class="mt-3 text-h6 font-weight-bold"
+                                  >光信里中元普渡活動</v-card-title
+                                >
+                              </v-card-item>
+                              <v-card-text>
+                                <v-divider class="mb-2"></v-divider>
+                                <ul>
+                                  <li><span>類型</span>物資發放</li>
+                                  <li><span>規則</span>每戶每人領取一份</li>
+                                  <li><span>發放人員</span>透過里辦</li>
+                                  <li><span>經費來源</span>里鄰建設服</li>
+                                  <li><span>區域</span>內湖區西康里</li>
+                                  <li><span>已簽收/上線人數</span>32/無</li>
+                                  <li><span>啟用拍照</span>Yes</li>
+                                  <li><span>啟用電子簽名</span>32/無</li>
+                                  <li><span>審核</span>No</li>
+                                  <li><span>發放日期</span>2024/9/10</li>
+                                </ul>
+                              </v-card-text>
+                            </div>
+                          </div>
+                        </v-card>
+                      </div>
+                    </v-card-text>
+                  </v-card>
+                </template>
+              </v-dialog>
+            </v-col>
+          </v-row>
         </v-col>
         <!-- 右側選單end -->
       </v-row>
