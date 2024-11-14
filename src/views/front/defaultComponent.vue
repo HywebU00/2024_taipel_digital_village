@@ -4,7 +4,7 @@
 
     <h2>活動管理</h2>
     <!-- 篩選器 start -->
-    <v-row class="formGrp filterList d-none d-sm-flex">
+    <v-row class="formGrp filterList d-sm-flex">
       <v-col cols="6" sm="4" md="4" lg="2" class="pt-0">
         <v-select
           label="全部行政區"
@@ -63,10 +63,7 @@
     <!-- 按鈕列 start -->
     <v-row>
       <!-- 搜尋列 start -->
-      <v-col
-        cols="auto"
-        class="py-0 d-none d-sm-flex align-center formGrp searchList"
-      >
+      <v-col cols="auto" class="py-0 d-flex align-center formGrp searchList">
         <v-text-field
           label="標題"
           density="compact"
