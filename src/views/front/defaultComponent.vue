@@ -319,44 +319,40 @@
                                   ></v-select>
                                 </v-col>
                               </v-row>
-                              <v-row class="formGrp">
-                                <v-col class="pb-2" cols="12" lg="">
-                                  <label
-                                    class="text-gray font-weight-bold"
-                                    for=""
-                                    >啟用拍照
-                                  </label>
-                                </v-col>
-                                <v-col cols="12" class="pt-0">
-                                  <v-switch
-                                    class="ml-2"
-                                    color="primary"
-                                    inset
-                                    hide-details="auto"
-                                    single-line
-                                  ></v-switch>
-                                </v-col>
-                              </v-row>
-                              <v-row class="formGrp">
-                                <v-col class="pb-2" cols="12" lg="">
-                                  <label
-                                    class="text-gray font-weight-bold"
-                                    for=""
-                                    >啟用電子簽名
-                                  </label>
-                                </v-col>
-                                <v-col cols="12" class="pt-0">
-                                  <v-switch
-                                    class="ml-2"
-                                    color="primary"
-                                    hide-details="auto"
-                                    inset
-                                  ></v-switch>
-                                </v-col>
-                              </v-row>
                             </v-expansion-panel-text>
                           </v-expansion-panel>
                         </v-expansion-panels>
+                        <v-row class="formGrp">
+                          <v-col class="pb-2" cols="12" lg="">
+                            <label class="text-gray font-weight-bold" for=""
+                              >啟用拍照
+                            </label>
+                          </v-col>
+                          <v-col cols="12" class="pt-0">
+                            <v-switch
+                              class="ml-2"
+                              color="primary"
+                              inset
+                              hide-details="auto"
+                              single-line
+                            ></v-switch>
+                          </v-col>
+                        </v-row>
+                        <v-row class="formGrp">
+                          <v-col class="pb-2" cols="12" lg="">
+                            <label class="text-gray font-weight-bold" for=""
+                              >啟用電子簽名
+                            </label>
+                          </v-col>
+                          <v-col cols="12" class="pt-0">
+                            <v-switch
+                              class="ml-2"
+                              color="primary"
+                              hide-details="auto"
+                              inset
+                            ></v-switch>
+                          </v-col>
+                        </v-row>
                       </v-container>
                     </v-form>
                   </div>
