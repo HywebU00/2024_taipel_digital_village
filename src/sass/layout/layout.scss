@@ -311,14 +311,35 @@ header {
   }
 }
 .backBtn {
-  display: none !important;
-  @include screen('notebook') {
-    display: block !important;
-  }
+  display: block !important;
 }
 
 //背景顏色設定
-
+.loginName {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  z-index: 99999;
+  .title {
+    margin: 0 1em;
+    span {
+      color: #000;
+      font-weight: bold;
+      margin-right: 0.75em;
+    }
+  }
+  .v-btn {
+    cursor: pointer;
+  }
+  @media (max-width: 960px) {
+    position: relative;
+    top: 0;
+    right: 0;
+    .v-btn {
+      margin-bottom: 0 !important;
+    }
+  }
+}
 .container {
   &.v-container {
     max-width: unset !important;
@@ -358,7 +379,7 @@ header {
     margin-left: 0.25rem;
     .v-select {
       .v-field {
-        background-color: scale-color(#f4f4f3, $lightness: -3%) !important; //darken(#f4f4f3, 3%) !important;
+        background-color: scale-color(#f4f4f3, $lightness: -3%) !important;
       }
 
       min-width: 150px;

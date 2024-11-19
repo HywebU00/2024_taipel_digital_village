@@ -105,9 +105,12 @@ input:-internal-autofill-selected {
     font-weight: bold;
     font-size: 1rem;
     margin-bottom: 0.5rem;
+    background: rgb(227, 246, 253);
   }
   .v-expansion-panel-text__wrapper {
-    padding: 0px;
+    border-radius: 0.75rem;
+    padding: 0.75em;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   }
   .v-expansion-panel--active > .v-expansion-panel-title:not(.v-expansion-panel-title--static) {
     min-height: 48px;

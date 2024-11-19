@@ -14,7 +14,12 @@
               <div class="cardContainer">
                 <div class="info">
                   <v-card-item>
-                    <v-card-title class="mt-3">慰問品發放</v-card-title>
+                    <!-- 新增class text-wrap start -->
+                    <v-card-title class="mt-3 text-wrap"
+                      >慰問品發放 慰問品發放
+                      肉父皮開下都呢有個穴八許葉久貓有發且免，各有木乍往急共帶
+                    </v-card-title>
+                    <!-- 新增class text-wrap end -->
                   </v-card-item>
                   <v-card-text>
                     <v-divider class="mb-2"></v-divider>

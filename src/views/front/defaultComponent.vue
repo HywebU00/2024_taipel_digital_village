@@ -362,22 +362,22 @@
                   </div>
                 </v-card-text>
                 <v-card-actions class="d-block">
-                  <div class="d-flex justify-center pa-4 pt-2">
+                  <div class="d-flex justify-center pa-4 pt-2 flex-wrap">
                     <v-btn
-                      class="bg-secondary btn mx-2"
+                      class="bg-secondary btn mx-2 mb-2 mb-sm-0"
                       text="取消"
                       variant="flat"
                       @click="isActive.value = false"
                     ></v-btn>
                     <v-btn
                       text="確認送審"
-                      class="btn mx-2"
+                      class="btn mx-2 mb-2 mb-sm-0"
                       variant="flat"
                       @click="isActive.value = false"
                     ></v-btn>
                     <v-btn
                       text="暫存草稿"
-                      class="btn mx-2"
+                      class="btn mx-2 mb-2 mb-sm-0"
                       variant="flat"
                       @click="isActive.value = false"
                     ></v-btn>

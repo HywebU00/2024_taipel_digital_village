@@ -1,7 +1,10 @@
 <template>
   <v-container class="container">
+    <div class="d-flex justify-end loginName">
+      <div class="mt-2 title"><span>志工</span>王小明</div>
+      <v-btn class="mb-4">登入</v-btn>
+    </div>
     <v-breadcrumbs :items="['首頁', '節點', '節點']"></v-breadcrumbs>
-
     <h2>簽收作業</h2>
     <div class="">
       <v-row class="">
