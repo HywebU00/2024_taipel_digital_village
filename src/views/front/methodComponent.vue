@@ -356,6 +356,75 @@
                                         ></v-text-field>
                                       </v-col>
                                     </v-row>
+                                    <v-row class="formGrp">
+                                      <v-col class="pb-2" cols="12" lg="12">
+                                        <label
+                                          class="text-gray font-weight-bold"
+                                          for=""
+                                          >詳細地址
+                                        </label>
+                                      </v-col>
+                                      <v-col cols="12" sm="6" class="pt-0">
+                                        <v-select
+                                          label="縣市"
+                                          single-line
+                                          density="compact"
+                                          hide-details="auto"
+                                          :items="[
+                                            '選項ㄧ',
+                                            '選項二',
+                                            '選項三',
+                                          ]"
+                                        ></v-select>
+                                      </v-col>
+                                      <v-col cols="12" sm="6" class="pt-0">
+                                        <v-select
+                                          label=" 區/鄉/鎮名"
+                                          single-line
+                                          density="compact"
+                                          hide-details="auto"
+                                          :items="[
+                                            '選項ㄧ',
+                                            '選項二',
+                                            '選項三',
+                                          ]"
+                                        ></v-select>
+                                      </v-col>
+                                      <v-col cols="12" sm="6" class="pt-0">
+                                        <v-select
+                                          label="村/里 名"
+                                          single-line
+                                          density="compact"
+                                          hide-details="auto"
+                                          :items="[
+                                            '選項ㄧ',
+                                            '選項二',
+                                            '選項三',
+                                          ]"
+                                        ></v-select>
+                                      </v-col>
+                                      <v-col cols="12" sm="6" class="pt-0">
+                                        <v-select
+                                          label="鄰"
+                                          single-line
+                                          density="compact"
+                                          hide-details="auto"
+                                          :items="[
+                                            '選項ㄧ',
+                                            '選項二',
+                                            '選項三',
+                                          ]"
+                                        ></v-select>
+                                      </v-col>
+                                      <v-col class="pt-0">
+                                        <v-text-field
+                                          label="地址"
+                                          density="compact"
+                                          single-line
+                                          hide-details="auto"
+                                        ></v-text-field>
+                                      </v-col>
+                                    </v-row>
                                     <!-- 拍照區塊 start -->
                                     <v-row class="formGrp">
                                       <v-col class="pb-2" cols="12" lg="">
