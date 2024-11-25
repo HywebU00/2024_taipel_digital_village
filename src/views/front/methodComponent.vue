@@ -307,6 +307,80 @@
                 </div>
               </v-card>
             </v-col>
+            <v-col cols="4" class="">
+              <v-card class="methodCard">
+                <div class="cardContainer">
+                  <div class="info">
+                    <v-card-text>
+                      <div class="icon">
+                        <img src="~@/assets/images/Bluetooth.svg" alt="" />
+                      </div>
+                      <v-dialog
+                        class="dialogCard methodDialog"
+                        max-width="500"
+                        :fullscreen="dialogFull"
+                        transition="dialog-bottom-transition"
+                      >
+                        <template v-slot:activator="{ props: activatorProps }">
+                          <v-btn
+                            variant="flat"
+                            color="primary"
+                            v-bind="activatorProps"
+                            @click="dialogWidth"
+                          >
+                            新增測試卡片
+                          </v-btn>
+                        </template>
+                        <template v-slot:default="{ isActive }">
+                          <v-card title="">
+                            <div class="d-flex justify-end px-4">
+                              <v-btn
+                                class="closeBtn"
+                                variant="text"
+                                icon="mdi-close"
+                                color="secondary"
+                                @click="isActive.value = false"
+                              ></v-btn>
+                            </div>
+                            <v-card-text class="px-4">
+                              <div class="">
+                                <div class="idBlock">
+                                  <img
+                                    class="bluetoothImg"
+                                    src="~@/assets/images/blue_.png"
+                                    alt=""
+                                  />
+                                </div>
+                                <div class="text">
+                                  請連線藍芽機，並插入健保卡
+                                </div>
+                              </div>
+                            </v-card-text>
+                            <v-card-actions class="d-block">
+                              <div class="d-flex justify-center pa-4 pt-2">
+                                <v-btn
+                                  text="讀取卡片"
+                                  class="btn mx-2"
+                                  variant="flat"
+                                  @click="isActive.value = false"
+                                ></v-btn>
+                                <v-btn
+                                  text="取消"
+                                  class="btn mx-2"
+                                  color="secondary"
+                                  variant="flat"
+                                  @click="isActive.value = false"
+                                ></v-btn>
+                              </div>
+                            </v-card-actions>
+                          </v-card>
+                        </template>
+                      </v-dialog>
+                    </v-card-text>
+                  </div>
+                </div>
+              </v-card>
+            </v-col>
             <v-col cols="4">
               <v-card class="methodCard">
                 <div class="cardContainer">
