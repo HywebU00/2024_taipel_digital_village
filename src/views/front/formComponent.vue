@@ -374,11 +374,13 @@
                                                   color="error"
                                                   icon="mdi-trash-can"
                                                 ></v-btn>
-                                                <v-img
-                                                  class="logo"
-                                                  src="~@/assets/images/logo.png"
-                                                  alt=""
-                                                />
+                                                <div class="img">
+                                                  <v-img
+                                                    class="logo"
+                                                    src="~@/assets/images/logo.png"
+                                                    alt=""
+                                                  />
+                                                </div>
                                               </div>
                                             </v-col>
                                             <v-col cols="6">
@@ -801,11 +803,13 @@
                                   color="error"
                                   icon="mdi-trash-can"
                                 ></v-btn>
-                                <v-img
-                                  class="logo"
-                                  src="~@/assets/images/logo.png"
-                                  alt=""
-                                />
+                                <div class="img">
+                                  <v-img
+                                    class="logo"
+                                    src="~@/assets/images/logo.png"
+                                    alt=""
+                                  />
+                                </div>
                               </div>
                             </v-col>
                             <v-col cols="6">

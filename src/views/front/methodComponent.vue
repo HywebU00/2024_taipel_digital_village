@@ -49,7 +49,6 @@
         <!-- 右側選單start -->
         <v-col cols="12" md="8" class="">
           <h3 class="mb-5"><span class="text-primary">簽收作業</span></h3>
-
           <v-row class="cardGrp">
             <v-col cols="4">
               <v-card class="methodCard">
@@ -445,11 +444,13 @@
                                                   color="error"
                                                   icon="mdi-trash-can"
                                                 ></v-btn>
-                                                <v-img
-                                                  class="logo"
-                                                  src="~@/assets/images/logo.png"
-                                                  alt=""
-                                                />
+                                                <div class="img">
+                                                  <v-img
+                                                    class="logo"
+                                                    src="~@/assets/images/logo.png"
+                                                    alt=""
+                                                  />
+                                                </div>
                                               </div>
                                             </v-col>
                                             <v-col cols="6">
