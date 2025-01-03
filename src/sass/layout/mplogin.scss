@@ -39,6 +39,57 @@
       margin: 0 0rem 0 10rem;
       width: rem(600);
     }
+    .marquee {
+      position: absolute;
+      width: 70%;
+      top: 100px;
+      .swiper {
+        height: 45px;
+        font-size: 1.2rem;
+        line-height: 45px;
+        background: #ffffff84;
+        box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+        border-radius: 0.25rem;
+        .swiper-slide {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        &::before {
+          position: absolute;
+          content: '';
+          left: 16px;
+          width: 4px;
+          height: 22px;
+          top: 12px;
+          background: #1d9ceb;
+        }
+      }
+      .swiper-button-prev {
+        // right: 2rem;
+        left: auto;
+        top: 13px;
+        right: 10px;
+      }
+      // .swiper-button-prev {
+      //
+      // }
+      .swiper-button-next {
+        right: 10px;
+        top: 32px;
+      }
+      .swiper-wrapper {
+        padding: 0 2rem;
+        width: auto;
+        padding-right: 4rem;
+        position: relative;
+      }
+      .swiper-button-prev,
+      .swiper-button-next {
+        transform: scale(0.45) rotate(90deg);
+        font-weight: 800;
+      }
+    }
     @include screen('desktop') {
       .v-sheet {
         display: flex !important;

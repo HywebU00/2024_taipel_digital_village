@@ -11,6 +11,18 @@
       </div>
       <v-sheet color="transparent" class="d-flex justify-content align-center">
         <div class="">
+          <div class="marquee">
+            <swiper
+              :modules="[Autoplay, Pagination, Navigation]"
+              navigation
+              direction="vertical"
+              :autoplay="{ delay: 2000, disableOnInteraction: true }"
+            >
+              <swiper-slide>台北市政府 單一身分驗證入口登入 </swiper-slide>
+              <swiper-slide>台北市政府 單一身分驗證入口登入2 </swiper-slide>
+              <swiper-slide>台北市政府 單一身分驗證入口登入3</swiper-slide>
+            </swiper>
+          </div>
           <h1 class="title">
             請使用台北市政府 <span></span> 單一身分驗證入口登入
           </h1>
@@ -38,8 +50,22 @@
 </template>
 
 <script>
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/swiper-bundle.css";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 export default {
   methods: {},
   mounted() {},
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  data() {
+    return {
+      Autoplay,
+      Navigation,
+      Pagination,
+    };
+  },
 };
 </script>
