@@ -9,18 +9,34 @@
           src="~@/assets/images/mp_logo.png"
         ></v-img>
       </div>
+
       <v-sheet color="transparent" class="d-flex justify-content align-center">
         <div class="">
           <div class="marquee">
             <swiper
               :modules="[Autoplay, Pagination, Navigation]"
               navigation
-              direction="vertical"
+              :autoHeight="true"
               :autoplay="{ delay: 2000, disableOnInteraction: true }"
             >
-              <swiper-slide>台北市政府 單一身分驗證入口登入 </swiper-slide>
-              <swiper-slide>台北市政府 單一身分驗證入口登入2 </swiper-slide>
-              <swiper-slide>台北市政府 單一身分驗證入口登入3</swiper-slide>
+              <swiper-slide>
+                <div>
+                  台北市政府 單一身分驗證入口登入 台北市政府
+                  單一身分驗證入口登入台北市政府
+                </div>
+              </swiper-slide>
+              <swiper-slide>
+                <div>
+                  台北市政府 單一身分驗證入口登入 台北市政府
+                  單一身分驗證入口登入台北市政府
+                </div>
+              </swiper-slide>
+              <swiper-slide
+                ><div class="">
+                  333 單一身分驗證入口登入台北市政府
+                  單一身分驗證入口登入台北市政府333
+                </div>
+              </swiper-slide>
             </swiper>
           </div>
           <h1 class="title">

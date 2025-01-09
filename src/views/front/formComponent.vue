@@ -1,7 +1,6 @@
 <template>
   <v-container class="container">
     <v-breadcrumbs :items="['首頁', '節點', '節點']"></v-breadcrumbs>
-
     <h2>報名作業</h2>
     <div class="">
       <v-row class="">
