@@ -573,7 +573,7 @@
   }
 }
 .pcMethod {
-  @include screen('tablet') {
+  @include screen('mobile') {
     display: none;
   }
 }
@@ -660,10 +660,3 @@
     // }
   }
 }
-
-// @container (max-width: 800px) {
-//   .authCard,
-//   .title {
-//     background: green !important;
-//   }
-// }
