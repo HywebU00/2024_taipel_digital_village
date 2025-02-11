@@ -719,7 +719,7 @@ export default {
         : (this.dialogFull = false);
     },
     isMobile() {
-      this.isMobileMethod = /Mobi|Android|iPhone|iPad|iPod/i.test(
+      this.isMobileMethod = /Mobi|Android|iPhone|iPad|iPod|Safari|Chrome/i.test(
         navigator.userAgent
       );
     },
