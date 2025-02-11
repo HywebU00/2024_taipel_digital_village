@@ -920,7 +920,7 @@ export default {
       this.$refs.test.innerHTML = /Mobi|Android|iPhone|iPad|iPod/i.test(
         navigator.userAgent
       );
-      this.isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(
+      this.isMobileMethod = /Mobi|Android|iPhone|iPad|iPod/i.test(
         navigator.userAgent
       );
     },
