@@ -49,7 +49,132 @@
         <!-- 右側選單start -->
         <v-col cols="12" md="8" class="">
           <h3 class="mb-5"><span class="text-primary">簽收作業</span></h3>
+          <h2 ref="test">123</h2>
           <v-row class="cardGrp">
+            <!-- 測試 -->
+            <v-col v-if="!isMobileMethod" cols="4" class="">
+              <v-card class="methodCard">
+                <div class="cardContainer">
+                  <div class="info">
+                    <v-card-text>
+                      <div class="icon">
+                        <img src="~@/assets/images/yoyocard.svg" alt="" />
+                      </div>
+                      <v-dialog
+                        class="dialogCard methodDialog"
+                        max-width="500"
+                        :fullscreen="dialogFull"
+                        transition="dialog-bottom-transition"
+                      >
+                        <template v-slot:activator="{ props: activatorProps }">
+                          <v-btn
+                            variant="flat"
+                            color="primary"
+                            v-bind="activatorProps"
+                            @click="dialogWidth"
+                          >
+                            手機版本不會出現
+                          </v-btn>
+                        </template>
+                        <template v-slot:default="{ isActive }">
+                          <v-card title="">
+                            <div class="d-flex justify-end px-4">
+                              <v-btn
+                                class="closeBtn"
+                                variant="text"
+                                icon="mdi-close"
+                                color="secondary"
+                                @click="isActive.value = false"
+                              ></v-btn>
+                            </div>
+                            <v-card-text class="px-4">
+                              <div class="">
+                                <div class="idBlock"></div>
+                                <div class="text">
+                                  請出示「敬老卡」 以進行掃描登記
+                                </div>
+                              </div>
+                            </v-card-text>
+                            <v-card-actions class="d-block">
+                              <div class="d-flex justify-center pa-4 pt-2">
+                                <v-btn
+                                  text="取消"
+                                  class="btn mx-2"
+                                  variant="flat"
+                                  @click="isActive.value = false"
+                                ></v-btn>
+                              </div>
+                            </v-card-actions>
+                          </v-card>
+                        </template>
+                      </v-dialog>
+                    </v-card-text>
+                  </div>
+                </div>
+              </v-card>
+            </v-col>
+            <v-col v-if="isMobileMethod" cols="4" class="">
+              <v-card class="methodCard">
+                <div class="cardContainer">
+                  <div class="info">
+                    <v-card-text>
+                      <div class="icon">
+                        <img src="~@/assets/images/yoyocard.svg" alt="" />
+                      </div>
+                      <v-dialog
+                        class="dialogCard methodDialog"
+                        max-width="500"
+                        :fullscreen="dialogFull"
+                        transition="dialog-bottom-transition"
+                      >
+                        <template v-slot:activator="{ props: activatorProps }">
+                          <v-btn
+                            variant="flat"
+                            color="primary"
+                            v-bind="activatorProps"
+                            @click="dialogWidth"
+                          >
+                            手機版本才會出現！！！！！
+                          </v-btn>
+                        </template>
+                        <template v-slot:default="{ isActive }">
+                          <v-card title="">
+                            <div class="d-flex justify-end px-4">
+                              <v-btn
+                                class="closeBtn"
+                                variant="text"
+                                icon="mdi-close"
+                                color="secondary"
+                                @click="isActive.value = false"
+                              ></v-btn>
+                            </div>
+                            <v-card-text class="px-4">
+                              <div class="">
+                                <div class="idBlock"></div>
+                                <div class="text">
+                                  請出示「敬老卡」 以進行掃描登記
+                                </div>
+                              </div>
+                            </v-card-text>
+                            <v-card-actions class="d-block">
+                              <div class="d-flex justify-center pa-4 pt-2">
+                                <v-btn
+                                  text="取消"
+                                  class="btn mx-2"
+                                  variant="flat"
+                                  @click="isActive.value = false"
+                                ></v-btn>
+                              </div>
+                            </v-card-actions>
+                          </v-card>
+                        </template>
+                      </v-dialog>
+                    </v-card-text>
+                  </div>
+                </div>
+              </v-card>
+            </v-col>
+            <!-- 測試 -->
             <v-col cols="4">
               <v-card class="methodCard">
                 <div class="cardContainer">
@@ -782,6 +907,7 @@ export default {
   data: () => ({
     dialogFull: false,
     model2: true,
+    isMobileMethod: "",
   }),
   methods: {
     dialogWidth() {
@@ -789,8 +915,18 @@ export default {
         ? (this.dialogFull = true)
         : (this.dialogFull = false);
     },
+    isMobile() {
+      console.log(/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent));
+      this.$refs.test.innerHTML = /Mobi|Android|iPhone|iPad|iPod/i.test(
+        navigator.userAgent
+      );
+      this.isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(
+        navigator.userAgent
+      );
+    },
   },
   mounted() {
+    this.isMobile();
     addEventListener("resize", function () {});
   },
   components: {},
